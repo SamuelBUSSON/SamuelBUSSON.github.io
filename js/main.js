@@ -99,15 +99,17 @@ $(document).ready(function () {
     $(document).on('click', '.languages', function (e) {
       switch (e.target.id) {
         case 'fr':
+            console.log("Fr");
             $('[lang="fr"]').show();
             $('[lang="en"]').hide();
           break;
         case 'eng':
+            console.log("Eng");
             $('[lang="fr"]').hide();
             $('[lang="en"]').show();
           break;
         default:
-          console.log(`Sorry`);
+            console.log(e.target.id);
       }
     });
 

@@ -262,7 +262,7 @@ img {
   color: #d04e30;
 }
 
-.navbar-right li a:hover img{
+.navbar-right li img:hover{
   opacity: 0.2;
   width: 30px;
   height: 30px;
