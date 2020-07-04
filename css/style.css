@@ -179,6 +179,10 @@ img {
     height: 55px;
 }
 
+.languages{
+
+}
+
 .sticky_navigation{
     -webkit-transition: all 0.4s ease-out;
     -moz-transition: all 0.4s ease-out ;
@@ -251,6 +255,33 @@ img {
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.navbar-right li a:hover{
+  font-weight: bold;
+  color: #d04e30;
+}
+
+.navbar-right li a:hover img{
+  opacity: 0.2;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.navbar-right li img{
+  opacity: 1.0;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .navbar-right li.active a{
@@ -856,6 +887,7 @@ canvas{
 }
 
 
+
 .gallery-items {
     position: relative;
     margin-bottom: 30px;
@@ -962,7 +994,7 @@ canvas{
 
 #modalText{
   text-align: justify;
-  padding-right: 5%;
+  padding: 1%;
 }
 
 /*--------------Portfolio area Ends-----------*/
@@ -1206,15 +1238,6 @@ canvas{
 }
 
 
-
-
-
-
-
-
-
-
-
 /*--------------- Footer area ends -------------*/
 
 
@@ -1222,6 +1245,10 @@ canvas{
     .skills-section .bar-percentage {
         width: 100%;
         margin-bottom: 5px;
+    }
+
+    .single-services {
+        height: auto;
     }
 
 }

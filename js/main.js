@@ -2,9 +2,16 @@ $(document).ready(function () {
     'use strict';
     //********* page loader js
 
+
+
+
     setTimeout(function () {
         $('.loader_bg').fadeToggle();
+        $('[lang="fr"]').show();
+        $('[lang="en"]').hide();
     }, 1000);
+
+
 
       //********* carrousel
 
@@ -19,13 +26,13 @@ $(document).ready(function () {
 
     var url_images =
     [
-      "url(./images/home/home.jpg)"/*,
-      "url(./images/home/size.png)",
-      "url(./images/portfolio/HellBlaze.png)"*/
+      "url(./images/home/home.jpg)",
+      "url(./images/portfolio/Palette.png)",
+      "url(./images/portfolio/JouteCeleste.jpg)"
     ]
 
     var index_images = 0;
-/*
+
     setInterval(function(){
       index_images++;
       if(index_images > url_images.length-1){
@@ -33,8 +40,9 @@ $(document).ready(function () {
       }
       $('.banner-area').css("background-image", url_images[index_images]);
       $('.banner-area').addClass("banner-area-fadeout");
-    },3000);
+    },2000);
 
+/*
     var class_value = ["banner-area-fadeout", "banner-area-fadein"];
     var class_index = 0;
 
@@ -86,6 +94,21 @@ $(document).ready(function () {
         if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
             $(this).collapse('hide');
         }
+    });
+
+    $(document).on('click', '.languages', function (e) {
+      switch (e.target.id) {
+        case 'fr':
+            $('[lang="fr"]').show();
+            $('[lang="en"]').hide();
+          break;
+        case 'eng':
+            $('[lang="fr"]').hide();
+            $('[lang="en"]').show();
+          break;
+        default:
+          console.log(`Sorry`);
+      }
     });
 
     //*********** scrollspy js
