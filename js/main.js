@@ -3,8 +3,6 @@ $(document).ready(function () {
     //********* page loader js
 
 
-
-
     setTimeout(function () {
         $('.loader_bg').fadeToggle();
         $('[lang="fr"]').show();
@@ -60,7 +58,7 @@ $(document).ready(function () {
 
     $(function(){
        element.typed({
-           strings: ["Développeur", "Passionné", "Shaders ♥"],
+           strings: ["Unity", "Unreal", "Shaders ♥", "Gameplay", "Script", "Tools"],
            loop: true,
            typeSpeed: 90
        });
@@ -134,6 +132,7 @@ $(document).ready(function () {
       $("#modalImg").prop('src', "images/portfolio/loader.gif");
       $("#modalImg").prop('src', ($(this).children(".Mimg").data("src")));
       $("#modalTitle").text($(this).children(".Mtext").data("title"));
+      console.log($(this).html());
       $("#modalText").html($(this).children(".Mtext").html());
     });
 
