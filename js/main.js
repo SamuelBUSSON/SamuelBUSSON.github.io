@@ -5,11 +5,11 @@ $(document).ready(function () {
 
     setTimeout(function () {
         $('.loader_bg').fadeToggle();
-        $('[lang="fr"]').show();
-        $('[lang="en"]').hide();
     }, 1000);
 
 
+    $('[lang="fr"]').show();
+    $('[lang="en"]').hide();
 
       //********* carrousel
 
