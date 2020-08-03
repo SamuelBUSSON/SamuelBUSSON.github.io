@@ -58,7 +58,7 @@ $(document).ready(function () {
 
     $(function(){
        element.typed({
-           strings: ["Unity", "Unreal", "Shaders ♥", "Gameplay", "Script", "Tools"],
+           strings: ["Unity", "Unreal", "Shaders ♥", ],
            loop: true,
            typeSpeed: 90
        });
