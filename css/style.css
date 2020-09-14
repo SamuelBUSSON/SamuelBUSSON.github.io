@@ -116,6 +116,26 @@ img {
     margin: 15px auto;
 }
 
+.section-header-left{
+    text-align: left;
+    margin-bottom: 5%;
+}
+.section-header-left h1{
+    font-size: 30px;
+}
+
+.section-header-left .line1 {
+    height: 2px;
+    width: 100px;
+    background: #E15F41;
+}
+
+.section-header-left .line2 {
+    height: 2px;
+    width: 50px;
+    background: #222222;
+}
+
 /*---------- default css ends ------------*/
 
 /*-------------- 2. Preloader css starts ---------------*/
