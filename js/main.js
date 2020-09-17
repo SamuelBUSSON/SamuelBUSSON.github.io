@@ -129,9 +129,11 @@ $(document).ready(function () {
     });
 
     $('.view').on("click", function (e) {
-      $("#modalImg").prop('src', "images/portfolio/loader.gif");
       $("#modalImg").prop('src', ($(this).children(".Mimg").data("src")));
       $("#modalTitle").text($(this).children(".Mtext").data("title"));
+      $("#modalTitle").text($(this).children(".Mtext").data("title"));
+
+
       console.log($(this).html());
       $("#modalText").html($(this).children(".Mtext").html());
     });
