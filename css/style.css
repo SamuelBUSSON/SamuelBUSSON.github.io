@@ -81,6 +81,10 @@ a:focus{
     text-decoration: none;
 }
 
+.descriptionContent{
+  width: 70%;
+}
+
 ul,li{
     margin: 0;
     padding: 0;
