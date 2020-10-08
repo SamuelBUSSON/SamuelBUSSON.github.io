@@ -1,0 +1,85 @@
+.enjmin-logo-text {
+    font-family: 'Quicksand';
+}
+
+
+.img-responsive {
+
+    max-width: 100%;
+    max-height: 600px;
+    height: auto;
+    object-fit: cover;
+}
+
+.egc-carousel-desc {
+    text-align: right;
+}
+
+.egc-carousel-desc>p {
+    font-family: 'Quicksand';
+    font-size: 2.5em;
+    padding: 6px 16px 6px 16px;
+    color: white;
+    background-color: rgba(255, 138, 128, 0.8);
+}
+
+.heavy-desc {
+    font-weight: bold;
+}
+
+.light-desc {
+    font-weight: 300;
+}
+
+.about-desc {
+    font-style: italic;
+    line-height: 40px;
+    font-size: 22px;
+}
+
+@media (min-width: 1200px) {
+    .enjmin-logo {
+        height: 100%;
+        position : absolute;
+    }
+
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .enjmin-logo {
+        display:none;
+    }
+
+   
+}
+
+@media (max-width: 992px) and (min-width: 730px) {
+    .enjmin-logo {
+        height: 100%;
+        position : absolute;
+    }
+    .enjmin-logo-text {
+        font-family: 'Quicksand';
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 730px) {
+    .enjmin-logo {
+        display:none;
+    }
+    .enjmin-logo-text {
+        font-family: 'Quicksand';
+        text-align: center;
+        width: 100%;
+    }
+
+    .egc-carousel-desc>p {
+        font-family: 'Quicksand';
+        font-size: 1.75em;
+        padding: 4px 10px 4px 10px;
+        color: white;
+        background-color: rgba(255, 138, 128, 0.8);
+    }
+}

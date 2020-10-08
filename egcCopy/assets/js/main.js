@@ -1,3 +1,4 @@
+//Schedule
 (function() {
 	// Schedule Template - by CodyHouse.co
 	function ScheduleTemplate( element ) {
@@ -19,7 +20,7 @@
 		this.modalEventName = this.modal.getElementsByClassName('cd-schedule-modal__name')[0];
 		this.coverLayer = this.element.getElementsByClassName('cd-schedule__cover-layer')[0];
 
-		this.modalMaxWidth = 800;
+		this.modalMaxWidth = 900;
 		this.modalMaxHeight = 480;
 
 		this.animating = false;
@@ -156,8 +157,10 @@
 			//change modal modalHeaderBg height/width and scale it
 			self.modalHeaderBg.setAttribute('style', 'height: '+eventHeight+'px; width: '+eventWidth+'px; transform: scaleY('+HeaderBgScaleY+')');
 
-			self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = "<div class=\"black-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.			 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor			 in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,			 sunt inculpa qui officia deserunt mollit anim id est laborum.</div>";
+			self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = target.getElementsByClassName('cd-description')[0].innerHTML;
 			Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
+
+			console.log(target);
 
 
 
@@ -297,7 +300,7 @@
 		// load the content of an event when user selects it
 		var self = this;
 
-		httpRequest = new XMLHttpRequest();
+		/*httpRequest = new XMLHttpRequest();
 		httpRequest.onreadystatechange = function() {
 			if (httpRequest.readyState === XMLHttpRequest.DONE) {
 	      if (httpRequest.status === 200) {
@@ -307,7 +310,7 @@
 	    }
 		};
 		httpRequest.open('GET', content+'.html');
-    httpRequest.send();
+    httpRequest.send();*/
 	};
 
 	ScheduleTemplate.prototype.getEventContent = function(string) {
@@ -359,10 +362,16 @@
 
 		window.addEventListener('keyup', function(event){
 			// close event modal when pressing escape key
-			if( event.keyCode && event.keyCode == 27 || event.key && event.key.toLowerCase() == 'escape' ) {
+			if( event.keyCode/* && event.keyCode == 27 || event.key && event.key.toLowerCase() == 'escape'*/ ) {
 				for(var i = 0; i < scheduleTemplateArray.length; i++) {
 					scheduleTemplateArray[i].closeModal();
 				}
+			}
+		});
+
+		window.addEventListener("click", function(){
+			for(var i = 0; i < scheduleTemplateArray.length; i++) {
+				scheduleTemplateArray[i].closeModal();
 			}
 		});
 
@@ -374,3 +383,18 @@
 		};
 	}
 }());
+
+//Carousel
+$('.carousel.carousel-slider').carousel({
+	fullWidth: true,
+	indicators: true
+});
+
+setInterval(function(){
+	$('.carousel').carousel('next');
+}, 5000);
+	
+//Smooth scroll
+$(document).ready(function(){
+	$('.scrollspy').scrollSpy();
+});

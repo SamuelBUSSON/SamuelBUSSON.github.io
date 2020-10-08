@@ -4,27 +4,28 @@
   <meta charset="utf-8">
 
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <title>EGC 2020</title>
+  <title>EGC</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="css/materialize.css" rel="stylesheet" type="text/css" >
+  <link href="css/style.css" rel="stylesheet" type="text/css" >
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-
   <div class="navbar-fixed">
-    <nav class="materialize-red lighten-1">
+    <nav class="materialize-red lighten-1" style="background-color: #161a23 !important;">
+      <img src="img/egclogo.jpg" class="enjmin-logo">
       <div class="container">
         <div class="row">
           <div class="col s12">
             <div class="nav-wrapper ">
-              <a href="#" class="brand-logo">Enjmin Game Conference 2020</a>
+              <a href="#" class="brand-logo enjmin-logo-text">ENJMIN <span style="font-weight: 300;">Game Conference</span></a>
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#Introduction">Introduction</a></li>
-                <li><a href="#Speakers">Speakers</a></li>
-                <li><a href="#Schedule">Schedule</a></li>
-                <li><a href="#Useful">Useful information</a></li>
+                <li><a href="#About">EGC</a></li>
+                <!--<li><a href="#Speakers">Speakers</a></li>-->
+                <!--<li><a href="#Schedule">Schedule</a></li>-->
+                <li><a href="#Infos">Practical informations</a></li>
               </ul>
             </div>
           </div>
@@ -35,19 +36,47 @@
 
   <div class=""> <!-- Container -->
 
-    <div class="parallax-container">
-       <div class="parallax"><img src="./img/conference.jpg"></div>
+    <div class="carousel carousel-slider center">
+      <div class="carousel-fixed-item">
+        <div class="egc-carousel-desc">
+          <p style= "display: inline-block"><span class="heavy-desc">ENJMIN Game Conference 2020</span><br/>2<sup>nd</sup> edition - December 15th to 17th</p>
+        </div>
+
+      </div>
+      <div class="carousel-item black white-text egc-carousel-item" href="#one!">
+        <img class="img-responsive" src="img/egcslide1.jpg">
+        <h2>First Panel</h2>
+        <p class="white-text">This is your first panel</p>
+      </div>
+      <div class="carousel-item black white-text egc-carousel-item" href="#two!">
+        <img class="img-responsive" src="img/egcslide2.jpg">
+        <h2>Second Panel</h2>
+        <p class="white-text">This is your second panel</p>
+      </div>
+      <div class="carousel-item black white-text egc-carousel-item" href="#three!">
+        <img class="img-responsive" src="img/egcslide3.jpg">
+        <h2>Third Panel</h2>
+        <p class="white-text">This is your third panel</p>
+      </div>
+      <div class="carousel-item black white-text egc-carousel-item" href="#four!">
+        <img class="img-responsive" src="img/egcslide4.jpg">
+        <h2>Fourth Panel</h2>
+        <p class="white-text">This is your fourth panel</p>
+      </div>
     </div>
 
-    <div class="section red accent-1 white-text scrollspy " id="Introduction">
+    <div class="section red accent-1 white-text scrollspy " id="About">
       <div class="row container">
-        <div class="col s12">
-          <h2 class = "white-text">Introduction</h2>
+        <div class="col s12 center">
+          <h2 class = "white-text enjmin-logo-text">About the EGC</h2>
         </div>
       </div>
       <div class="row container">
-          <div class="col s12">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <div class="col center">
+            <span class="about-desc center">
+
+The Enjmin Game Conference (previously known as the Ateliers du Jeu Vidéo) is an annual event gathering professionals and students of the video game field. From the 15th to the 17th of december, key actors of the videogame's industry will engage in a series of conferences and workshops.
+            </span>
           </div>
       </div>
     </div>
@@ -68,7 +97,6 @@
               <p>Actor <br>
                 <a href="https://www.linkedin.com/in/brad-pitt-a5a7b4163/?originalSubdomain=fr">LinkedIn profile</a>
               </p>
-              <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
             </li>
             <li class="collection-item avatar">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/1200px-Brad_Pitt_2019_by_Glenn_Francis.jpg" alt="" class="circle">
@@ -115,239 +143,229 @@
         </div>
       </div>
     </div>
+
     <div class="red accent-1 white-text scrollspy" id="Schedule">
-      <div class="row">
-        <div class="col s12">
-          <h2 class="white-text">Schedule</h2>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
-          <div class="cd-schedule__timeline">
-            <ul>
-              <li><span>09:00</span></li>
-              <li><span>09:30</span></li>
-              <li><span>10:00</span></li>
-              <li><span>10:30</span></li>
-              <li><span>11:00</span></li>
-              <li><span>11:30</span></li>
-              <li><span>12:00</span></li>
-              <li><span>12:30</span></li>
-              <li><span>13:00</span></li>
-              <li><span>13:30</span></li>
-              <li><span>14:00</span></li>
-              <li><span>14:30</span></li>
-              <li><span>15:00</span></li>
-              <li><span>15:30</span></li>
-              <li><span>16:00</span></li>
-              <li><span>16:30</span></li>
-              <li><span>17:00</span></li>
-              <li><span>17:30</span></li>
-              <li><span>18:00</span></li>
-            </ul>
-          </div> <!-- .cd-schedule__timeline -->
-
-          <div class="cd-schedule__events">
-            <ul>
-              <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Monday</span></div>
-
-                <ul>
-                  <li class="cd-schedule__event">
-                    <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                      <em class="cd-schedule__name">Abs Circuit</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2" href="#0">
-                      <em class="cd-schedule__name">Rowing Workout</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                      <em class="cd-schedule__name">Yoga Level 1</em>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Tuesday</span></div>
-
-                <ul>
-                  <li class="cd-schedule__event">
-                    <a data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                      <em class="cd-schedule__name">Rowing Workout</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="11:30" data-end="13:00"  data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                      <em class="cd-schedule__name">Restorative Yoga</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                      <em class="cd-schedule__name">Abs Circuit</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                      <em class="cd-schedule__name">Yoga Level 1</em>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Wednesday</span></div>
-
-                <ul>
-                  <li class="cd-schedule__event">
-                    <a data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                      <em class="cd-schedule__name">Restorative Yoga</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="10:45" data-end="11:45" data-content="event-yoga-1" data-event="event-3" href="#0">
-                      <em class="cd-schedule__name">Yoga Level 1</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="12:00" data-end="13:45"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                      <em class="cd-schedule__name">Rowing Workout</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="13:45" data-end="15:00" data-content="event-yoga-1" data-event="event-3" href="#0">
-                      <em class="cd-schedule__name">Yoga Level 1</em>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Thursday</span></div>
-
-                <ul>
-                  <li class="cd-schedule__event">
-                    <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                      <em class="cd-schedule__name">Abs Circuit</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="12:00" data-end="13:45" data-content="event-restorative-yoga" data-event="event-4" href="#0">
-                      <em class="cd-schedule__name">Restorative Yoga</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="15:30" data-end="16:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                      <em class="cd-schedule__name">Abs Circuit</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="17:00" data-end="18:30"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                      <em class="cd-schedule__name">Rowing Workout</em>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Friday</span></div>
-
-                <ul>
-                  <li class="cd-schedule__event">
-                    <a data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2" href="#0">
-                      <em class="cd-schedule__name">Rowing Workout</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                      <em class="cd-schedule__name">Abs Circuit</em>
-                    </a>
-                  </li>
-
-                  <li class="cd-schedule__event">
-                    <a data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3" href="#0">
-                      <em class="cd-schedule__name">Yoga Level 1 lorem</em>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          <div class="row">
+            <div class="col s12">
+              <h2 class="white-text">Schedule</h2>
+            </div>
           </div>
+          <div class="row">
 
-          <div class="cd-schedule-modal">
-            <header class="cd-schedule-modal__header">
-              <div class="cd-schedule-modal__content">
-                <span class="cd-schedule-modal__date"></span>
-                <h3 class="cd-schedule-modal__name"></h3>
+            <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+              <div class="cd-schedule__timeline">
+                <ul>
+                  <li><span>09:00</span></li>
+                  <li><span>09:30</span></li>
+                  <li><span>10:00</span></li>
+                  <li><span>10:30</span></li>
+                  <li><span>11:00</span></li>
+                  <li><span>11:30</span></li>
+                  <li><span>12:00</span></li>
+                  <li><span>12:30</span></li>
+                  <li><span>13:00</span></li>
+                  <li><span>13:30</span></li>
+                  <li><span>14:00</span></li>
+                  <li><span>14:30</span></li>
+                  <li><span>15:00</span></li>
+                  <li><span>15:30</span></li>
+                  <li><span>16:00</span></li>
+                  <li><span>16:30</span></li>
+                  <li><span>17:00</span></li>
+                  <li><span>17:30</span></li>
+                  <li><span>18:00</span></li>
+                </ul>
+              </div> <!-- .cd-schedule__timeline -->
+
+              <div class="cd-schedule__events">
+                <ul>
+                  <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>Monday</span></div>
+
+                    <ul>
+                      <li class="cd-schedule__event">
+                        <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                          <em class="cd-schedule__name">Programmer strong together</em>
+                          <em class="cd-description">
+                            <div class="descriptionContent">
+                              <div>
+                                <h1 class="red-text">PROGZ</h1>
+                              </div>
+                              <div>
+                                <h2 class="cyan-text">PROGZ</h2>
+                              </div>
+                              <div>
+                                <h3 class="yellow-text">PROGZ</h3>
+                              </div>
+                            </div>
+                          </em>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>Tuesday</span></div>
+
+                    <ul>
+                      <li class="cd-schedule__event">
+                        <a data-start="10:30" data-end="15:30" data-content="event-abs-circuit" data-event="event-2" href="#0">
+                          <em class="cd-schedule__name">How to use Paint</em>
+                          <em class="cd-description">
+                            <div class="descriptionContent">
+                              <div class="red-text">
+                                J'adore le mardi  ça ouais j'adore ça enfin pas ouf
+                              </div>
+                              <div class="cyan-text">
+                                J'adore le mardi  ça ouais j'adore ça enfin pas ouf
+                              </div>
+                              <div class="yellow-text">
+                                J'adore le mardi  ça ouais j'adore ça enfin pas ouf
+                              </div>
+                            </div>
+                          </em>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>Wednesday</span></div>
+
+                    <ul>
+                      <li class="cd-schedule__event">
+                        <a data-start="13:30" data-end="15:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
+                          <em class="cd-schedule__name">Ergonomic random stuff</em>
+                          <em class="cd-description">
+                            <div class="descriptionContent">
+                              <div class="green-text">
+                                Bla bla bla... brain.. bla bla bla... useless...
+                              </div>
+                            </div>
+                          </em>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>Thursday</span></div>
+
+                    <ul>
+                      <li class="cd-schedule__event">
+                        <a data-start="09:45" data-end="10:15" data-content="event-abs-circuit" data-event="event-3" href="#0">
+                          <em class="cd-schedule__name">Bullshit</em>
+                          <em class="cd-description">
+                            <div class="descriptionContent">
+                              <div class="cyan-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </div>
+                              <div class="yellow-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                              </div>
+                            </div>
+                          </em>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="cd-schedule__group">
+                    <div class="cd-schedule__top-info"><span>Friday</span></div>
+                    <ul>
+                      <li class="cd-schedule__event">
+                        <a data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-4" href="#0">
+                          <em class="cd-schedule__name">Abs Circuit</em>
+                          <em class="cd-description">
+                            <div class="descriptionContent">
+                              <div class="orange-text">
+                                J'adore ça le vendredi ouais j'adore ça enfin pas ouf
+                              </div>
+                              <div class="blue-text">
+                                J'adore ça le vendredi  ouais j'adore ça enfin pas ouf
+                              </div>
+                              <div class="purple-text">
+                                J'adore ça le vendredi  ouais j'adore ça enfin pas ouf
+                              </div>
+                            </div>
+                          </em>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
 
-              <div class="cd-schedule-modal__header-bg"></div>
-            </header>
+              <div class="cd-schedule-modal">
+                <header class="cd-schedule-modal__header">
+                  <div class="cd-schedule-modal__content">
+                    <span class="cd-schedule-modal__date"></span>
+                    <h3 class="cd-schedule-modal__name"></h3>
+                  </div>
 
-            <div class="cd-schedule-modal__body">
-              <div class="cd-schedule-modal__event-info"></div>
-              <div class="cd-schedule-modal__body-bg"></div>
+                  <div class="cd-schedule-modal__header-bg"></div>
+                </header>
+
+                <div class="cd-schedule-modal__body">
+                  <div class="cd-schedule-modal__event-info"></div>
+                  <div class="cd-schedule-modal__body-bg"></div>
+                </div>
+
+                <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
+              </div>
+
+              <div class="cd-schedule__cover-layer"></div>
+
             </div>
-
-            <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
           </div>
+        </div>
+      </div>
 
-          <div class="cd-schedule__cover-layer"></div>
+    <div class="section">
+      <div class="row container scrollspy center" id="Infos">
+        <h2 class="enjmin-logo-text">Practical informations</h2>
+      </div>
+      <div class="row container">
+        <div class="col s6">
+          <h4 class="enjmin-logo-text">Contact</h4>
+          <div class="divider"></div>
+          <div style="padding-top: 16px">
+            These conferences are open to professionals and to CNAM-ENJMIN students. This year, this event will be organised by the students in order to create precious moments of exchange with the professionals of french and international video game field.<br/><br/>
+            <b>For more informations please contact</b> :<br>
+            <a href="mailto:may.hubert@lecnam.net">may.hubert@lecnam.net</a>
+          </div>
+        </div>
+        <div class="col s6">
+          <h4 class="enjmin-logo-text">Venue</h4>
+          <div class="divider"></div>
+          <div style="padding-top: 16px">
+            <b>Cnam-Enjmin<br>
+            138 Rue de Bordeaux, 16000 Angoulême<b>
+          </div>
+          <br>
+          <iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=138%20Rue%20de%20Bordeaux,%2016000%20Angoul%C3%AAme+(ENJMIN)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
 
         </div>
       </div>
     </div>
-  </div>
-  <div class="section">
-  <div class="row container scrollspy" id="Useful">
-    <h2>Useful informations</h2>
-  </div>
-    <div class="row container">
-        <div class="col l4 m12 s12"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=138%20Rue%20de%20Bordeaux,%2016000%20Angoul%C3%AAme+(ENJMIN)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-        </div>
-        <div class="col l8 m12 s12">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-    </div>
-  </div>
 
-  <footer class="page-footer materialize-red">
-    <div class="footer-copyright">
-      <div class="container">
-        © 2020 copyright
+    <footer class="page-footer materialize-red">
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 Copyright CNAM-ENJMIN
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
 
-  <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.js"></script>
-  <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
-  <script src="assets/js/main.js"></script>
-  <script>
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
-</script>
-
-
-</body>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+    </script>
+  </body>
 </html>
