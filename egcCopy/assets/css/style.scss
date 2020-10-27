@@ -1,4 +1,4 @@
-@import '../../../../../codyhouse-framework/main/assets/css/style.scss'; // ⚠️ make sure to import the CodyHouse framework
+@import './codyhouse-framework/main/assets/css/style.scss'; // ⚠️ make sure to import the CodyHouse framework
 
 // --------------------------------
 
@@ -16,8 +16,8 @@
   @include defineColorHSL(--cd-color-border, 0, 0%, 92%);       // Grey
 
   //schedule template
-  --schedule-rows-number: 19;
-  --schedule-rows-height: 50px;
+  --schedule-rows-number: 16;
+  --schedule-rows-height: 75px;
 }
 
 
@@ -338,7 +338,7 @@
   height: 70px;
   display: flex;
   align-content: center;
-  width: 100%;
+  width: 10%;
 
   @include breakpoint(md) {
     position: absolute;
@@ -370,7 +370,7 @@
 
   @include breakpoint(md) {
     height: 100%;
-    width: auto;
+    width: 45%;
   }
 }
 
