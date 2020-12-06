@@ -388,3 +388,19 @@ function openInNewTab(url) {
 		};
 	}
 }());
+
+
+//Carousel
+$('.carousel.carousel-slider').carousel({
+	fullWidth: true,
+	indicators: true
+});
+
+setInterval(function(){
+	$('.carousel').carousel('next');
+}, 5000);
+
+//Smooth scroll
+$(document).ready(function(){
+	$('.scrollspy').scrollSpy();
+});
