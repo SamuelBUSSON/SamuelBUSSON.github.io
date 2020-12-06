@@ -1,4 +1,9 @@
-//Schedule
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+
+
 (function() {
 	// Schedule Template - by CodyHouse.co
 	function ScheduleTemplate( element ) {
@@ -86,9 +91,9 @@
 		var self = this;
 		for(var i = 0; i < this.singleEvents.length; i++) {
 			// open modal when user selects an event
-			this.singleEvents[i].addEventListener('click', function(event){
+			this.singleEvents[i].getElementsByTagName('a')[0].addEventListener('click', function(event){
 				event.preventDefault();
-				if(!self.animating) self.openModal(this.getElementsByTagName('a')[0]);
+				if(!self.animating) self.openModal(this);
 			});
 		}
 		//close modal window
@@ -383,18 +388,3 @@
 		};
 	}
 }());
-
-//Carousel
-$('.carousel.carousel-slider').carousel({
-	fullWidth: true,
-	indicators: true
-});
-
-setInterval(function(){
-	$('.carousel').carousel('next');
-}, 5000);
-	
-//Smooth scroll
-$(document).ready(function(){
-	$('.scrollspy').scrollSpy();
-});

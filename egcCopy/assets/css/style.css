@@ -9164,10 +9164,14 @@ Usage: codyhouse.co/license
   --cd-color-event-3-h: 162;
   --cd-color-event-3-s: 14%;
   --cd-color-event-3-l: 68%;
-  --cd-color-event-4: hsl(31, 89%, 68%);
-  --cd-color-event-4-h: 31;
-  --cd-color-event-4-s: 89%;
-  --cd-color-event-4-l: 68%;
+  --cd-color-event-4: hsl(225, 46%, 42%);
+  --cd-color-event-4-h: 225;
+  --cd-color-event-4-s: 46%;
+  --cd-color-event-4-l: 42%;
+  --cd-color-event-5: hsl(270, 50%, 40%);
+  --cd-color-event-5-h: 270;
+  --cd-color-event-5-s: 50%;
+  --cd-color-event-5-l: 40%;
   --cd-color-text: hsl(0, 0%, 13%);
   --cd-color-text-h: 0;
   --cd-color-text-s: 0%;
@@ -9176,8 +9180,8 @@ Usage: codyhouse.co/license
   --cd-color-border-h: 0;
   --cd-color-border-s: 0%;
   --cd-color-border-l: 60%;
-  --schedule-rows-number: 16;
-  --schedule-rows-height: 75px;
+  --schedule-rows-number: 22;
+  --schedule-rows-height: 125px;
 }
 
 .cd-schedule {
@@ -9333,6 +9337,31 @@ Usage: codyhouse.co/license
   }
 }
 
+@media (min-width: 64rem) {
+  .event-right {
+    width: 50%;
+  }
+}
+@media (min-width: 48rem) {
+  .event-right {
+    width: auto;
+  }
+}
+
+@media (min-width: 48rem) {
+  .event-left {
+    padding-left: auto;
+  }
+}
+@media (min-width: 64rem) {
+  .event-left {
+    margin-left: 50%;
+    border-right: 50%;
+    padding-right: 50%;
+    width: 50%;
+  }
+}
+
 .cd-schedule__event {
   flex-shrink: 0;
   float: left;
@@ -9436,6 +9465,11 @@ Usage: codyhouse.co/license
   background: var(--cd-color-event-4);
 }
 
+.cd-schedule__event [data-event=event-5],
+.cd-schedule-modal[data-event=event-5] .cd-schedule-modal__header-bg {
+  background: var(--cd-color-event-5);
+}
+
 .cd-schedule-modal {
   position: fixed;
   z-index: 3;
@@ -9500,7 +9534,7 @@ Usage: codyhouse.co/license
 @media (min-width: 64rem) {
   .cd-schedule-modal__body {
     height: 100%;
-    width: 45%;
+    width: auto;
   }
 }
 
