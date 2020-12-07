@@ -131,6 +131,8 @@ function openInNewTab(url) {
 			self.modal.addEventListener('transitionend', function cb(){
 				self.animating = false;
 				self.modal.removeEventListener('transitionend', cb);
+				self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = target.getElementsByClassName('cd-description')[0].innerHTML;
+				window.scrollTo({ top: 0, behavior: 'smooth' });	
 			});
 		} else {
 			var eventPosition = target.getBoundingClientRect(),
@@ -161,6 +163,9 @@ function openInNewTab(url) {
 			self.modalBodyBg.setAttribute('style', 'height:'+eventHeight+'px; width: 1px; transform: scaleY('+HeaderBgScaleY+') scaleX('+BodyBgScaleX+')');
 			//change modal modalHeaderBg height/width and scale it
 			self.modalHeaderBg.setAttribute('style', 'height: '+eventHeight+'px; width: '+eventWidth+'px; transform: scaleY('+HeaderBgScaleY+')');
+
+
+			console.log(self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML);
 
 			self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = target.getElementsByClassName('cd-description')[0].innerHTML;
 			Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
