@@ -20,6 +20,9 @@
 
     function initElement()
 {
+
+  alert("Evènement de click détecté");
+
 var p = document.getElementById("TeamA");
 p.onclick = showAlert;
 };
@@ -27,6 +30,7 @@ p.onclick = showAlert;
 function showAlert()
 {
 alert("Evènement de click détecté");
+<?php echo writeFile("TeamA")?>
 }
     </script>
 </head>
@@ -41,7 +45,7 @@ alert("Evènement de click détecté");
 
 <?php
 
-  function writeFile($value='')
+  function writeFile($value="")
   {
     $filename =  file_get_contents("database.txt");
 
