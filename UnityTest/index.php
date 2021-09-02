@@ -19,19 +19,16 @@
     <script type="text/javascript">
 
     function initElement()
-{
+    {
+      var p = document.getElementById("TeamA");
+      p.onclick = showAlert;
+    };
 
-  alert("Evènement de click détecté");
-
-var p = document.getElementById("TeamA");
-p.onclick = showAlert;
-};
-
-function showAlert()
-{
-alert("Evènement de click détecté");
-<?php echo writeFile("TeamA")?>
-}
+    function showAlert()
+    {
+      alert("Evènement de click détecté");
+      <?php echo writeFile("TeamA")?>
+    }
     </script>
 </head>
 
@@ -47,8 +44,7 @@ alert("Evènement de click détecté");
 
   function writeFile($value="")
   {
-    $filename =  file_get_contents("database.txt");
-
+    file_put_contents("database.txt", $value);
   }
  ?>
 
