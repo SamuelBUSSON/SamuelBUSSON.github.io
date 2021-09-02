@@ -17,20 +17,37 @@
     </style>
 
     <script type="text/javascript">
-      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-      let vh = window.innerHeight * 0.01;
-      // Then we set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    function initElement()
+{
+var p = document.getElementById("TeamA");
+p.onclick = showAlert;
+};
+
+function showAlert()
+{
+alert("Evènement de click détecté");
+}
     </script>
 </head>
 
-<body style="background-color : #455a64 ; position : relative" class="toast-containe" >
+<body style="background-color : #455a64 ; position : relative" class="toast-container" onload="initElement();" >
 
   <nav style="background-color : #f4511e">
 		<div class="nav-wrapper">
 			<a href="#" class="brand-logo center">Les Puceaux passent le BAC</a>
 		</div>
 	</nav>
+
+<?php
+
+  function writeFile($value='')
+  {
+    $filename =  file_get_contents("database.txt");
+
+  }
+ ?>
+
 
 <br>
 <br>
@@ -40,14 +57,14 @@
 
   <div class="container valign-wrapper">
     <div class="row center">
-      <a class="waves-effect waves-light btn-large purple darken-2">Team A</a>
+      <a class="waves-effect waves-light btn-large purple darken-2" id="TeamA">Team A</a>
     </div>
 
     <br>
     <br>
     <br>
     <div class="row center">
-      <a class="waves-effect waves-light btn-large light-blue darken-4">Team B</a>
+      <a class="waves-effect waves-light btn-large light-blue darken-4" id="TeamB">Team B</a>
     </div>
   </div>
 
