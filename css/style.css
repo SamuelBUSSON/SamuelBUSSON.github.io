@@ -818,7 +818,11 @@ canvas {
 /*---------------8. Services area Starts--------------*/
 
 .services-area {
-    background-color: #eeeeee;
+    background-color: #ffffff;
+}
+
+.portfolio-area {
+    background-color: #eee;
 }
 
 .services-icon i {
