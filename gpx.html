@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPX ➜ Google Maps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .slider-group {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .slider-group label {
+            display: block;
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .slider-group input[type="range"] {
+            width: 100%;
+            height: 6px;
+            appearance: none;
+            background: #d0d0d0;
+            border-radius: 5px;
+            outline: none;
+            margin-top: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .slider-group input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #1976d2;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .slider-group input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #1976d2;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #1976d2;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .file-label input {
+            display: none;
+        }
+
+        .output {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            resize: none;
+            font-family: monospace;
+            font-size: 0.9rem;
+            background: #f9f9f9;
+        }
+
+        .info {
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .btn {
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.25rem;
+            background: #43a047;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GPX &rarr; Google Maps</h1>
+        <div class="slider-group">
+            <label>
+                Distance minimale entre points (<span id="minDistVal">200</span> m)
+                <input type="range" id="minDist" min="50" max="300" value="200">
+            </label>
+            <label>
+                Nombre maximum de points (<span id="maxPtsVal">9</span>)
+                <input type="range" id="maxPts" min="9" max="40" value="9">
+            </label>
+        </div>
+        <label class="file-label">
+            Choisir un fichier GPX
+            <input type="file" id="gpxFile" accept=".gpx">
+        </label>
+        <textarea id="output" class="output" rows="4" readonly></textarea>
+        <p class="info">Le lien a été copié dans le presse-papier.</p>
+        <button id="openBtn" class="btn">Ouvrir dans Google Maps</button>
+    </div>
+
+    <script>
+        function haversine(a, b) {
+            const toRad = d => d * Math.PI / 180;
+            const R = 6371000;
+            const dLat = toRad(b[0] - a[0]);
+            const dLon = toRad(b[1] - a[1]);
+            const lat1 = toRad(a[0]), lat2 = toRad(b[0]);
+            const sinDlat = Math.sin(dLat / 2), sinDlon = Math.sin(dLon / 2);
+            const gg = sinDlat * sinDlat + Math.cos(lat1) * Math.cos(lat2) * sinDlon * sinDlon;
+            return R * 2 * Math.atan2(Math.sqrt(gg), Math.sqrt(1 - gg));
+        }
+
+        function extractFilteredCoords(text, minDist) {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'application/xml');
+            const pts = xml.getElementsByTagName('trkpt');
+            const filtered = [];
+            let last = null;
+            for (let i = 0; i < pts.length; i++) {
+                const lat = parseFloat(pts[i].getAttribute('lat'));
+                const lon = parseFloat(pts[i].getAttribute('lon'));
+                const pt = [lat, lon];
+                if (!last || haversine(last, pt) >= minDist) {
+                    filtered.push(pt);
+                    last = pt;
+                }
+            }
+            return filtered;
+        }
+
+        function selectRepresentative(points, maxP) {
+            const n = points.length;
+            if (n <= maxP) return points;
+            const sel = [];
+            for (let i = 0; i < maxP; i++) {
+                sel.push(points[Math.round(i * (n - 1) / (maxP - 1))]);
+            }
+            return sel;
+        }
+
+        function coordsToString(coords) {
+            return coords.map(p => p[0].toFixed(7) + ',' + p[1].toFixed(7)).join('/');
+        }
+
+        function buildMapsUrl(str) {
+            return 'https://www.google.com/maps/dir/' + str + '?hl=fr&z=14';
+        }
+
+        const minDistEl = document.getElementById('minDist');
+        const maxPtsEl = document.getElementById('maxPts');
+        const minDistVal = document.getElementById('minDistVal');
+        const maxPtsVal = document.getElementById('maxPtsVal');
+        const fileEl = document.getElementById('gpxFile');
+        const outputEl = document.getElementById('output');
+        const openBtn = document.getElementById('openBtn');
+        let gpxText = '';
+
+        minDistEl.addEventListener('input', e => minDistVal.textContent = e.target.value);
+        maxPtsEl.addEventListener('input', e => maxPtsVal.textContent = e.target.value);
+
+        fileEl.addEventListener('change', () => {
+            const file = fileEl.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                gpxText = reader.result;
+            };
+            reader.readAsText(file);
+        });
+
+        openBtn.addEventListener('click', () => {
+            if (!gpxText) return alert('Sélectionnez un fichier GPX');
+            const minD = parseInt(minDistEl.value, 10);
+            const maxP = parseInt(maxPtsEl.value, 10);
+            const filtered = extractFilteredCoords(gpxText, minD);
+            const selected = selectRepresentative(filtered, maxP);
+            const str = coordsToString(selected);
+            const url = buildMapsUrl(str);
+            navigator.clipboard.writeText(url);
+            outputEl.value = url;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+
+</html>
