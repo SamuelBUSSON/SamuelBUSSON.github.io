@@ -4,230 +4,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPX ➜ Google Maps</title>
+    <title>GPX &rarr; Google Maps & Boucle Vélo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f6f8;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #eef2f5;
+            color: #333;
         }
 
         .container {
-            max-width: 500px;
-            margin: 60px auto;
-            background: white;
+            max-width: 720px;
+            margin: 40px auto;
+            background: #fff;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            color: #333;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
-        .slider-group {
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-
-        .slider-group label {
-            display: block;
-            margin-bottom: 1.5rem;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .slider-group input[type="range"] {
-            width: 100%;
-            height: 6px;
-            appearance: none;
-            background: #d0d0d0;
-            border-radius: 5px;
-            outline: none;
-            margin-top: 0.5rem;
-            transition: background 0.3s ease;
-        }
-
-        .slider-group input[type="range"]::-webkit-slider-thumb {
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            background: #1976d2;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease;
-        }
-
-        .slider-group input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            background: #1976d2;
+        hr {
             border: none;
-            border-radius: 50%;
-            cursor: pointer;
+            border-top: 1px solid #ddd;
+            margin: 2rem 0;
+        }
+
+        .file-section,
+        .loop-section {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: .5rem;
+            font-weight: 600;
         }
 
         .file-label {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: .6rem 1.2rem;
             background: #1976d2;
-            color: white;
-            border-radius: 8px;
+            color: #fff;
+            border-radius: 6px;
             cursor: pointer;
+            transition: background .3s;
+        }
+
+        .file-label:hover {
+            background: #155a9c;
+        }
+
+        .control-group {
             margin-bottom: 1rem;
-            font-weight: 600;
         }
 
-        .file-label input {
-            display: none;
-        }
-
-        .output {
+        input[type="range"],
+        input[type="number"],
+        select {
             width: 100%;
+            padding: .4rem;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 0.75rem;
-            margin-top: 1rem;
-            resize: none;
-            font-family: monospace;
-            font-size: 0.9rem;
-            background: #f9f9f9;
+            border-radius: 6px;
         }
 
-        .info {
-            margin-top: 0.5rem;
-            color: #666;
-            font-size: 0.85rem;
+        input[type="range"] {
+            -webkit-appearance: none;
+            height: 6px;
+            background: #ddd;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #1976d2;
+            border-radius: 50%;
+            cursor: pointer;
         }
 
         .btn {
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.25rem;
+            display: inline-block;
+            padding: .6rem 1.2rem;
             background: #43a047;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background .3s;
         }
 
         .btn:hover {
             background: #388e3c;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 3rem;
+            padding: .6rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: vertical;
+            font-family: monospace;
+        }
+
+        .info {
+            font-size: .85rem;
+            color: #555;
+            margin-top: .5rem;
+        }
+
+        #map {
+            height: 300px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>GPX &rarr; Google Maps</h1>
-        <div class="slider-group">
-            <label>
-                Distance minimale entre points (<span id="minDistVal">200</span> m)
-                <input type="range" id="minDist" min="50" max="300" value="100">
-            </label>
-            <label>
-                Nombre maximum de points (<span id="maxPtsVal">9</span>)
-                <input type="range" id="maxPts" min="10" max="25" value="20">
-            </label>
+        <h1>GPX &rarr; Google Maps & Boucle Vélo</h1>
+        <div class="file-section">
+            <label>Filtrage et sélection GPX</label>
+            <div class="control-group">
+                <label>Distance min. (GPX) (<span id="minDistFileVal">100</span> m)</label>
+                <input type="range" id="minDistFile" min="50" max="300" value="100">
+            </div>
+            <div class="control-group">
+                <label>Points max (GPX) (<span id="maxPtsFileVal">15</span>)</label>
+                <input type="range" id="maxPtsFile" min="5" max="25" value="15">
+            </div>
+            <label class="file-label">Choisir GPX<input type="file" id="gpxFile" accept=".gpx"></label>
+            <textarea id="output" placeholder="Lien Google Maps..."></textarea>
+            <a id="openMaps" href="#" class="btn">Ouvrir dans Google Maps</a>
         </div>
-        <label class="file-label">
-            Choisir un fichier GPX
-            <input type="file" id="gpxFile" accept=".gpx">
-        </label>
-        <textarea id="output" class="output" rows="4" readonly></textarea>
-        <p class="info">Le lien a été copié dans le presse-papier.</p>
-        <button id="openBtn" class="btn">Ouvrir dans Google Maps</button>
+        <hr>
+        <div class="loop-section">
+            <label>Point de départ (clic carte)</label>
+            <div id="map"></div>
+            <div class="control-group">
+                <label>Distance cible (km)</label>
+                <input type="number" id="distanceKm" value="40" min="1">
+            </div>
+            <div class="control-group">
+                <label>Tolérance (%)</label>
+                <input type="number" id="tolerancePct" value="10" min="0" max="100">
+            </div>
+            <div class="control-group">
+                <label>Direction initiale</label>
+                <select id="direction">
+                    <option value="N">Nord</option>
+                    <option value="NE">Nord-Est</option>
+                    <option value="E">Est</option>
+                    <option value="SE">Sud-Est</option>
+                    <option value="S">Sud</option>
+                    <option value="SW">Sud-Ouest</option>
+                    <option value="W">Ouest</option>
+                    <option value="NW">Nord-Ouest</option>
+                </select>
+            </div>
+            <a id="genLoop" href="#" class="btn">Générer Boucle Vélo</a>
+            <textarea id="loopOutput" placeholder="Lien Google Maps boucle..."></textarea>
+            <a id="openLoop" href="#" class="btn">Ouvrir Boucle dans Maps</a>
+            <p class="info">Les points sont filtrés et espacés selon les réglages.</p>
+        </div>
     </div>
-
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/@mapbox/polyline"></script>
     <script>
-        function haversine(a, b) {
-            const toRad = d => d * Math.PI / 180;
-            const R = 6371000;
-            const dLat = toRad(b[0] - a[0]);
-            const dLon = toRad(b[1] - a[1]);
-            const lat1 = toRad(a[0]), lat2 = toRad(b[0]);
-            const sinDlat = Math.sin(dLat / 2), sinDlon = Math.sin(dLon / 2);
-            const gg = sinDlat * sinDlat + Math.cos(lat1) * Math.cos(lat2) * sinDlon * sinDlon;
-            return R * 2 * Math.atan2(Math.sqrt(gg), Math.sqrt(1 - gg));
-        }
+        function haversine(a, b) { const R = 6371000, toRad = d => d * Math.PI / 180; const dLat = toRad(b[0] - a[0]), dLon = toRad(b[1] - a[1]); const lat1 = toRad(a[0]), lat2 = toRad(b[0]); const gg = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2; return R * 2 * Math.atan2(Math.sqrt(gg), Math.sqrt(1 - gg)); }
+        function filterPoints(points, minDist) { let res = [], last = null; points.forEach(p => { if (!last || haversine(last, p) >= minDist) { res.push(p); last = p; } }); return res; }
+        function selectPts(points, maxPts) { const n = points.length; if (n <= maxPts) return points; return Array.from({ length: maxPts }, (_, i) => points[Math.round(i * (n - 1) / (maxPts - 1))]); }
+        function buildMapsUrl(str) { return 'https://www.google.com/maps/dir/' + str + '?hl=fr&z=14'; }
 
-        function extractFilteredCoords(text, minDist) {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(text, 'application/xml');
-            const pts = xml.getElementsByTagName('trkpt');
-            const filtered = [];
-            let last = null;
-            for (let i = 0; i < pts.length; i++) {
-                const lat = parseFloat(pts[i].getAttribute('lat'));
-                const lon = parseFloat(pts[i].getAttribute('lon'));
-                const pt = [lat, lon];
-                if (!last || haversine(last, pt) >= minDist) {
-                    filtered.push(pt);
-                    last = pt;
-                }
-            }
-            return filtered;
-        }
+        // GPX handling
+        const minDistFile = document.getElementById('minDistFile'), maxPtsFile = document.getElementById('maxPtsFile');
+        document.getElementById('minDistFileVal').textContent = minDistFile.value;
+        document.getElementById('maxPtsFileVal').textContent = maxPtsFile.value;
+        minDistFile.oninput = e => document.getElementById('minDistFileVal').textContent = e.target.value;
+        maxPtsFile.oninput = e => document.getElementById('maxPtsFileVal').textContent = e.target.value;
+        const gpxFile = document.getElementById('gpxFile'), output = document.getElementById('output'), openMaps = document.getElementById('openMaps');
+        gpxFile.onchange = () => {
+            const file = gpxFile.files[0]; if (!file) return;
+            const reader = new FileReader(); reader.onload = () => {
+                const xml = new DOMParser().parseFromString(reader.result, 'application/xml');
+                const pts = [...xml.querySelectorAll('trkpt')].map(t => [+t.getAttribute('lat'), +t.getAttribute('lon')]);
+                const filt = filterPoints(pts, +minDistFile.value);
+                const sel = selectPts(filt, +maxPtsFile.value);
+                const str = sel.map(p => p[0].toFixed(7) + ',' + p[1].toFixed(7)).join('/');
+                output.value = str; openMaps.href = buildMapsUrl(str);
+            }; reader.readAsText(file);
+        };
+        openMaps.onclick = e => { e.preventDefault(); window.open(openMaps.href, '_blank'); };
 
-        function selectRepresentative(points, maxP) {
-            const n = points.length;
-            if (n <= maxP) return points;
-            const sel = [];
-            for (let i = 0; i < maxP; i++) {
-                sel.push(points[Math.round(i * (n - 1) / (maxP - 1))]);
-            }
-            return sel;
-        }
+        // Map init
+        const map = L.map('map').setView([47.218371, -1.553621], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OSM' }).addTo(map);
+        let startMarker, start, routeLayer;
+        map.on('click', e => { if (startMarker) map.removeLayer(startMarker); if (routeLayer) map.removeLayer(routeLayer); map.setView(e.latlng, 13); startMarker = L.marker(e.latlng).addTo(map); start = [e.latlng.lat, e.latlng.lng]; });
 
-        function coordsToString(coords) {
-            return coords.map(p => p[0].toFixed(7) + ',' + p[1].toFixed(7)).join('/');
-        }
+        // Boucle via OpenRouteService
+        const distanceKm = document.getElementById('distanceKm'), tolerancePct = document.getElementById('tolerancePct'), direction = document.getElementById('direction');
+        const genLoop = document.getElementById('genLoop'), loopOut = document.getElementById('loopOutput'), openLoop = document.getElementById('openLoop');
 
-        function buildMapsUrl(str) {
-            return 'https://www.google.com/maps/dir/' + str + '?hl=fr&z=14';
-        }
-
-        const minDistEl = document.getElementById('minDist');
-        const maxPtsEl = document.getElementById('maxPts');
-        const minDistVal = document.getElementById('minDistVal');
-        const maxPtsVal = document.getElementById('maxPtsVal');
-        const fileEl = document.getElementById('gpxFile');
-        const outputEl = document.getElementById('output');
-        const openBtn = document.getElementById('openBtn');
-        let gpxText = '';
-
-        minDistEl.addEventListener('input', e => minDistVal.textContent = e.target.value);
-        maxPtsEl.addEventListener('input', e => maxPtsVal.textContent = e.target.value);
-
-        fileEl.addEventListener('change', () => {
-            const file = fileEl.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = () => {
-                gpxText = reader.result;
+        genLoop.onclick = async e => {
+            e.preventDefault();
+            if (!start) return alert('Choisir un point de départ');
+            const km = +distanceKm.value, tol = +tolerancePct.value / 100, dir = direction.value;
+            const dist = Math.round(km * 1000), seed = Date.now();
+            const bearingsMap = { N: 0, NE: 45, E: 90, SE: 135, S: 180, SW: 225, W: 270, NW: 315 };
+            // Build request body with correct round_trip parameters
+            const body = {
+                coordinates: [[start[1], start[0]]],
+                profile: 'cycling-road',
+                // round_trip parameters must be prefixed keys
+                'round_trip.distance': dist,
+                'round_trip.seed': seed,
+                bearings: [[bearingsMap[dir], Math.round(360 * tol)]]
             };
-            reader.readAsText(file);
-        });
-
-        openBtn.addEventListener('click', () => {
-            if (!gpxText) return alert('Sélectionnez un fichier GPX');
-            const minD = parseInt(minDistEl.value, 10);
-            const maxP = parseInt(maxPtsEl.value, 10);
-            const filtered = extractFilteredCoords(gpxText, minD);
-            const selected = selectRepresentative(filtered, maxP);
-            const str = coordsToString(selected);
-            const url = buildMapsUrl(str);
-            navigator.clipboard.writeText(url);
-            outputEl.value = url;
-            window.open(url, '_blank');
-        });
+            // Remove 'format' field and use proper endpoint
+            const url = 'https://api.openrouteservice.org/v2/directions/cycling-road/geojson';
+            const resp = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'VOTRE_CLE_ORS'
+                },
+                body: JSON.stringify(body)
+            });
+            if (!resp.ok) {
+                const errText = await resp.text();
+                console.error('ORS Error payload:', await resp.json().catch(() => errText));
+                return alert(`Erreur ORS (${resp.status}): see console for details`);
+            }
+            const data = await resp.json();
+            // ORS geojson returns features array
+            const coords = data.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
+            if (routeLayer) map.removeLayer(routeLayer);
+            routeLayer = L.polyline(coords, { color: 'blue' }).addTo(map);
+            // filtering
+            const filt = filterPoints(coords, +minDistFile.value);
+            const sel = selectPts(filt, +maxPtsFile.value);
+            const str = sel.map(p => p[0].toFixed(7) + ',' + p[1].toFixed(7)).join('/');
+            loopOut.value = str;
+            openLoop.href = buildMapsUrl(str);
+        };
+        openLoop.onclick = e => {
+            e.preventDefault();
+            window.open(openLoop.href, '_blank');
+        }; e => { e.preventDefault(); window.open(openLoop.href, '_blank'); };
     </script>
 </body>
 
