@@ -2,9 +2,9 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPX &rarr; Google Maps & Boucle Vélo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPX → Google Maps & Boucle Vélo</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         *,
@@ -18,7 +18,6 @@
             padding: 0;
             font-family: 'Segoe UI', sans-serif;
             background: #eef2f5;
-            color: #333;
         }
 
         .container {
@@ -32,8 +31,8 @@
 
         h1 {
             text-align: center;
-            font-size: 2rem;
             margin-bottom: 1rem;
+            font-size: 2rem;
         }
 
         hr {
@@ -53,17 +52,20 @@
             font-weight: 600;
         }
 
-        .file-label {
+        .file-label,
+        .btn {
             display: inline-block;
             padding: .6rem 1.2rem;
             background: #1976d2;
             color: #fff;
             border-radius: 6px;
             cursor: pointer;
+            text-decoration: none;
             transition: background .3s;
         }
 
-        .file-label:hover {
+        .file-label:hover,
+        .btn:hover {
             background: #155a9c;
         }
 
@@ -73,7 +75,8 @@
 
         input[type="range"],
         input[type="number"],
-        select {
+        select,
+        textarea {
             width: 100%;
             padding: .4rem;
             border: 1px solid #ccc;
@@ -81,9 +84,9 @@
         }
 
         input[type="range"] {
-            -webkit-appearance: none;
             height: 6px;
             background: #ddd;
+            -webkit-appearance: none;
         }
 
         input[type="range"]::-webkit-slider-thumb {
@@ -96,14 +99,7 @@
         }
 
         .btn {
-            display: inline-block;
-            padding: .6rem 1.2rem;
             background: #43a047;
-            color: #fff;
-            border-radius: 6px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background .3s;
         }
 
         .btn:hover {
@@ -111,13 +107,9 @@
         }
 
         textarea {
-            width: 100%;
             min-height: 3rem;
-            padding: .6rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            resize: vertical;
             font-family: monospace;
+            resize: vertical;
         }
 
         .info {
@@ -136,32 +128,32 @@
 
 <body>
     <div class="container">
-        <h1>GPX &rarr; Google Maps & Boucle Vélo</h1>
+        <h1>GPX → Google Maps & Boucle Vélo</h1>
         <div class="file-section">
-            <label>Filtrage et sélection GPX</label>
+            <label>Filtrage GPX</label>
             <div class="control-group">
-                <label>Distance min. (GPX) (<span id="minDistFileVal">100</span> m)</label>
-                <input type="range" id="minDistFile" min="50" max="300" value="100">
+                <label>Distance min. (<span id="minDistVal">200</span> m)</label>
+                <input type="range" id="minDist" min="50" max="300" value="200" />
             </div>
             <div class="control-group">
-                <label>Points max (GPX) (<span id="maxPtsFileVal">15</span>)</label>
-                <input type="range" id="maxPtsFile" min="5" max="25" value="15">
+                <label>Points max (<span id="maxPtsVal">9</span>)</label>
+                <input type="range" id="maxPts" min="5" max="40" value="9" />
             </div>
-            <label class="file-label">Choisir GPX<input type="file" id="gpxFile" accept=".gpx"></label>
-            <textarea id="output" placeholder="Lien Google Maps..."></textarea>
-            <a id="openMaps" href="#" class="btn">Ouvrir dans Google Maps</a>
+            <label class="file-label">Choisir GPX<input type="file" id="gpxFile" accept=".gpx" /></label>
+            <textarea id="gpxOutput" placeholder="Lien Google Maps..."></textarea>
+            <a id="openGpxMaps" href="#" class="btn">Ouvrir GPX dans Maps</a>
         </div>
-        <hr>
+        <hr />
         <div class="loop-section">
-            <label>Point de départ (clic carte)</label>
+            <label>Point de départ (clic sur carte)</label>
             <div id="map"></div>
             <div class="control-group">
                 <label>Distance cible (km)</label>
-                <input type="number" id="distanceKm" value="40" min="1">
+                <input type="number" id="distanceKm" value="40" min="1" />
             </div>
             <div class="control-group">
                 <label>Tolérance (%)</label>
-                <input type="number" id="tolerancePct" value="10" min="0" max="100">
+                <input type="number" id="tolerancePct" value="10" min="0" max="100" />
             </div>
             <div class="control-group">
                 <label>Direction initiale</label>
@@ -176,96 +168,113 @@
                     <option value="NW">Nord-Ouest</option>
                 </select>
             </div>
-            <a id="genLoop" href="#" class="btn">Générer Boucle Vélo</a>
+            <a id="genLoop" href="#" class="btn">Générer Boucle</a>
             <textarea id="loopOutput" placeholder="Lien Google Maps boucle..."></textarea>
             <a id="openLoop" href="#" class="btn">Ouvrir Boucle dans Maps</a>
-            <p class="info">Les points sont filtrés et espacés selon les réglages.</p>
+            <p class="info">Les points sont filtrés et espacés uniformément.</p>
         </div>
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://unpkg.com/@mapbox/polyline"></script>
     <script>
-        function haversine(a, b) { const R = 6371000, toRad = d => d * Math.PI / 180; const dLat = toRad(b[0] - a[0]), dLon = toRad(b[1] - a[1]); const lat1 = toRad(a[0]), lat2 = toRad(b[0]); const gg = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2; return R * 2 * Math.atan2(Math.sqrt(gg), Math.sqrt(1 - gg)); }
-        function filterPoints(points, minDist) { let res = [], last = null; points.forEach(p => { if (!last || haversine(last, p) >= minDist) { res.push(p); last = p; } }); return res; }
-        function selectPts(points, maxPts) { const n = points.length; if (n <= maxPts) return points; return Array.from({ length: maxPts }, (_, i) => points[Math.round(i * (n - 1) / (maxPts - 1))]); }
-        function buildMapsUrl(str) { return 'https://www.google.com/maps/dir/' + str + '?hl=fr&z=14'; }
+        // utilitaires
+        function haversine(a, b) {
+            const R = 6371000, toRad = d => d * Math.PI / 180;
+            const dLat = toRad(b[0] - a[0]), dLon = toRad(b[1] - a[1]);
+            const lat1 = toRad(a[0]), lat2 = toRad(b[0]);
+            const sinD = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+            return R * 2 * Math.atan2(Math.sqrt(sinD), Math.sqrt(1 - sinD));
+        }
+        function filterPoints(points, minD) {
+            let res = [], last = null;
+            points.forEach(p => { if (!last || haversine(last, p) >= minD) { res.push(p); last = p; } });
+            return res;
+        }
+        function selectPts(points, maxP) {
+            const n = points.length;
+            if (n <= maxP) return points;
+            return Array.from({ length: maxP }, (_, i) => points[Math.round(i * (n - 1) / (maxP - 1))]);
+        }
+        function buildMapsUrl(str) {
+            return 'https://www.google.com/maps/dir/' + str + '?hl=fr&z=14';
+        }
 
-        // GPX handling
-        const minDistFile = document.getElementById('minDistFile'), maxPtsFile = document.getElementById('maxPtsFile');
-        document.getElementById('minDistFileVal').textContent = minDistFile.value;
-        document.getElementById('maxPtsFileVal').textContent = maxPtsFile.value;
-        minDistFile.oninput = e => document.getElementById('minDistFileVal').textContent = e.target.value;
-        maxPtsFile.oninput = e => document.getElementById('maxPtsFileVal').textContent = e.target.value;
-        const gpxFile = document.getElementById('gpxFile'), output = document.getElementById('output'), openMaps = document.getElementById('openMaps');
+        // GPX section
+        const minDistEl = document.getElementById('minDist'), maxPtsEl = document.getElementById('maxPts');
+        const minDistVal = document.getElementById('minDistVal'), maxPtsVal = document.getElementById('maxPtsVal');
+        minDistVal.textContent = minDistEl.value;
+        maxPtsVal.textContent = maxPtsEl.value;
+        minDistEl.oninput = e => minDistVal.textContent = e.target.value;
+        maxPtsEl.oninput = e => maxPtsVal.textContent = e.target.value;
+        const gpxFile = document.getElementById('gpxFile'), gpxOutput = document.getElementById('gpxOutput'), openGpxMaps = document.getElementById('openGpxMaps');
         gpxFile.onchange = () => {
-            const file = gpxFile.files[0]; if (!file) return;
-            const reader = new FileReader(); reader.onload = () => {
+            const f = gpxFile.files[0]; if (!f) return;
+            const reader = new FileReader();
+            reader.onload = () => {
                 const xml = new DOMParser().parseFromString(reader.result, 'application/xml');
-                const pts = [...xml.querySelectorAll('trkpt')].map(t => [+t.getAttribute('lat'), +t.getAttribute('lon')]);
-                const filt = filterPoints(pts, +minDistFile.value);
-                const sel = selectPts(filt, +maxPtsFile.value);
+                const raw = [...xml.querySelectorAll('trkpt')].map(t => [+t.getAttribute('lat'), +t.getAttribute('lon')]);
+                const filt = filterPoints(raw, +minDistEl.value);
+                const sel = selectPts(filt, +maxPtsEl.value);
                 const str = sel.map(p => p[0].toFixed(7) + ',' + p[1].toFixed(7)).join('/');
-                output.value = str; openMaps.href = buildMapsUrl(str);
-            }; reader.readAsText(file);
+                gpxOutput.value = str;
+                openGpxMaps.href = buildMapsUrl(str);
+            };
+            reader.readAsText(f);
         };
-        openMaps.onclick = e => { e.preventDefault(); window.open(openMaps.href, '_blank'); };
+        openGpxMaps.onclick = e => { e.preventDefault(); window.open(openGpxMaps.href, '_blank'); };
 
         // Map init
-        const map = L.map('map').setView([47.218371, -1.553621], 13);
+        const map = L.map('map').setView([47.21837, -1.55362], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OSM' }).addTo(map);
         let startMarker, start, routeLayer;
-        map.on('click', e => { if (startMarker) map.removeLayer(startMarker); if (routeLayer) map.removeLayer(routeLayer); map.setView(e.latlng, 13); startMarker = L.marker(e.latlng).addTo(map); start = [e.latlng.lat, e.latlng.lng]; });
+        map.on('click', e => {
+            if (startMarker) map.removeLayer(startMarker);
+            if (routeLayer) map.removeLayer(routeLayer);
+            map.setView(e.latlng, 13);
+            startMarker = L.marker(e.latlng).addTo(map);
+            start = [e.latlng.lat, e.latlng.lng];
+        });
 
-        // Boucle via OpenRouteService
+        // Loop with binary radius search
         const distanceKm = document.getElementById('distanceKm'), tolerancePct = document.getElementById('tolerancePct'), direction = document.getElementById('direction');
-        const genLoop = document.getElementById('genLoop'), loopOut = document.getElementById('loopOutput'), openLoop = document.getElementById('openLoop');
-
+        const genLoop = document.getElementById('genLoop'), loopOutput = document.getElementById('loopOutput'), openLoop = document.getElementById('openLoop');
         genLoop.onclick = async e => {
             e.preventDefault();
             if (!start) return alert('Choisir un point de départ');
-            const km = +distanceKm.value, tol = +tolerancePct.value / 100, dir = direction.value;
-            const dist = Math.round(km * 1000), seed = Date.now();
-            const bearingsMap = { N: 0, NE: 45, E: 90, SE: 135, S: 180, SW: 225, W: 270, NW: 315 };
-            // Build request body with correct round_trip parameters
-            const body = {
-                coordinates: [[start[1], start[0]]],
-                profile: 'cycling-road',
-                // round_trip parameters must be prefixed keys
-                'round_trip.distance': dist,
-                'round_trip.seed': seed,
-                bearings: [[bearingsMap[dir], Math.round(360 * tol)]]
-            };
-            // Remove 'format' field and use proper endpoint
-            const url = 'https://api.openrouteservice.org/v2/directions/cycling-road/geojson';
-            const resp = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'VOTRE_CLE_ORS'
-                },
-                body: JSON.stringify(body)
-            });
-            if (!resp.ok) {
-                const errText = await resp.text();
-                console.error('ORS Error payload:', await resp.json().catch(() => errText));
-                return alert(`Erreur ORS (${resp.status}): see console for details`);
+            const km = +distanceKm.value, tol = +tolerancePct.value / 100;
+            const targetDist = km * 1000;
+            let low = targetDist / (2 * Math.PI) * 0.5, high = targetDist / (2 * Math.PI) * 1.5;
+            let bestRoute = [];
+            for (let iter = 0; iter < 8; iter++) {
+                const radius = (low + high) / 2;
+                const circlePts = [];
+                const bearings = { N: 0, NE: 45, E: 90, SE: 135, S: 180, SW: 225, W: 270, NW: 315 };
+                const ang = bearings[direction.value], dev = 360 * tol;
+                for (let i = 0; i < 8; i++) {
+                    const angle = ang - dev / 2 + (dev / 7) * i;
+                    const φ1 = start[0] * Math.PI / 180, λ1 = start[1] * Math.PI / 180;
+                    const θ = angle * Math.PI / 180, δ = radius / 6371000;
+                    const φ2 = Math.asin(Math.sin(φ1) * Math.cos(δ) + Math.cos(φ1) * Math.sin(δ) * Math.cos(θ));
+                    const λ2 = λ1 + Math.atan2(Math.sin(θ) * Math.sin(δ) * Math.cos(φ1), Math.cos(δ) - Math.sin(φ1) * Math.sin(φ2));
+                    circlePts.push([λ2 * 180 / Math.PI, φ2 * 180 / Math.PI]);
+                }
+                const coords = [[start[1], start[0]], ...circlePts, [start[1], start[0]]];
+                const path = coords.map(c => c.join(',')).join(';');
+                const url = `https://router.project-osrm.org/route/v1/bicycle/${path}?overview=full&geometries=polyline`;
+                const resp = await fetch(url); const data = await resp.json();
+                const geom = data.routes[0].geometry;
+                const route = polyline.decode(geom).map(p => [p[0], p[1]]);
+                let length = 0; for (let j = 1; j < route.length; j++) length += haversine(route[j - 1], route[j]);
+                bestRoute = route;
+                if (length < targetDist) low = radius; else high = radius;
             }
-            const data = await resp.json();
-            // ORS geojson returns features array
-            const coords = data.features[0].geometry.coordinates.map(c => [c[1], c[0]]);
             if (routeLayer) map.removeLayer(routeLayer);
-            routeLayer = L.polyline(coords, { color: 'blue' }).addTo(map);
-            // filtering
-            const filt = filterPoints(coords, +minDistFile.value);
-            const sel = selectPts(filt, +maxPtsFile.value);
+            routeLayer = L.polyline(bestRoute, { color: 'blue' }).addTo(map);
+            const filt = filterPoints(bestRoute, +minDistEl.value), sel = selectPts(filt, +maxPtsEl.value);
             const str = sel.map(p => p[0].toFixed(7) + ',' + p[1].toFixed(7)).join('/');
-            loopOut.value = str;
-            openLoop.href = buildMapsUrl(str);
+            loopOutput.value = str; openLoop.href = buildMapsUrl(str);
         };
-        openLoop.onclick = e => {
-            e.preventDefault();
-            window.open(openLoop.href, '_blank');
-        }; e => { e.preventDefault(); window.open(openLoop.href, '_blank'); };
+        openLoop.onclick = e => { e.preventDefault(); window.open(openLoop.href, '_blank'); };
     </script>
 </body>
 
