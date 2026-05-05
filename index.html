@@ -1,126 +1,90 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-  <!--meta tags-->
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Samuel Busson - Portfolio">
-  <meta name="keywords" content="onepage, developer, resume, cv, ,personal, portfolio, personal resume, clean, modern">
-  <meta name="author" content="Samuel BUSSON">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Samuel Busson — Développeur de jeux vidéo, spécialisé en gameplay et effets visuels.">
+  <meta name="keywords" content="samuel busson, développeur jeux vidéo, gameplay programmer, Unity, Unreal, shaders, portfolio">
+  <meta name="author" content="Samuel BUSSON">
 
-  <!--template title-->
-  <title>Samuel - Portfolio</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Samuel Busson — Portfolio">
+  <meta property="og:description" content="Développeur gameplay & effets visuels (shaders, post-process, VFX)">
+  <meta property="og:type" content="website">
 
+  <title>Samuel Busson — Portfolio</title>
 
-  <!--========== Theme Fonts ==========-->
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
-  <!--Font Awesome css-->
+  <!-- Librairies CSS -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
-
-  <!--Bootstrap css-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
-  <!--Magnific popup css-->
   <link rel="stylesheet" href="css/magnific-popup.css">
-
-  <!--Owl carousel css-->
   <link rel="stylesheet" href="css/owl.carousel.css">
   <link rel="stylesheet" href="css/owl.theme.default.css">
-
-  <!--Normalizer css-->
   <link rel="stylesheet" href="css/normalize.css">
-
-  <!--Animate css-->
   <link rel="stylesheet" href="css/animate.css">
 
-  <!--Template css-->
+  <!-- Styles du template -->
   <link rel="stylesheet" href="css/style.css">
-
-  <!--Responsive css-->
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-  <!--preloader starts-->
-
-  <div class="loader_bg">
+  <!-- Préchargeur -->
+  <div class="loader_bg" role="status" aria-label="Chargement…">
     <div class="loader"></div>
   </div>
 
-  <!--preloader ends-->
-
-  <!--navigation area starts-->
-
-  <header class="nav-area navbar-fixed-top">
+  <!-- Navigation -->
+  <header class="nav-area navbar-fixed-top" role="banner">
     <div class="container">
       <div class="row">
-        <!--main menu starts-->
-
         <div class="col-md-12">
-          <div class="main-menu">
+          <nav class="main-menu">
             <div class="navbar navbar-cus">
               <div class="navbar-header">
                 <a href="index.html" class="navbar-brand">Samuel</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+                  aria-expanded="false" aria-controls="navbarContent">
+                  <span class="sr-only">Ouvrir le menu</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
               </div>
 
-              <div class="navbar-collapse collapse">
-                <nav>
-                  <ul lang="fr" class="nav navbar-nav navbar-right">
-                    <li class="active"><a class="smooth-menu" href="#home">Accueil</a></li>
-                    <li><a class="smooth-menu" href="#about">À propos de moi</a></li>
-                    <li><a class="smooth-menu" href="#resume">Parcours</a></li>
-                    <li><a class="smooth-menu" href="#services">Mes compétences</a></li>
-                    <li><a class="smooth-menu" href="#portfolio">Portfolio</a></li>
-                    <li><a class="smooth-menu" href="#contact">Contact</a></li>
-                    <!-- <li>
-                    <img class="languages pointer" id="fr"  src="images/about/fr.png"/>
-                  </li>
-                  <li>
-                  <img class="languages pointer" id="eng" src="images/about/uk.png"/>
-                </li> -->
-                  </ul>
-                  <ul lang="en" class="nav navbar-nav navbar-right">
-                    <li class="active"><a class="smooth-menu" href="#home">Home</a></li>
-                    <li><a class="smooth-menu" href="#about">About me</a></li>
-                    <li><a class="smooth-menu" href="#resume">Resume</a></li>
-                    <li><a class="smooth-menu" href="#services">Skills</a></li>
-                    <li><a class="smooth-menu" href="#portfolio">Portfolio</a></li>
-                    <li><a class="smooth-menu" href="#contact">Contact</a></li>
-
-                    <!-- <li>
-                <img class="languages pointer" id="fr" src="images/about/fr.png"/>
-              </li>
-              <li>
-              <img class="languages pointer" id="eng" src="images/about/uk.png"/>
-            </li> -->
-                  </ul>
-                </nav>
+              <div class="navbar-collapse collapse" id="navbarContent">
+                <ul lang="fr" class="nav navbar-nav navbar-right">
+                  <li class="active"><a class="smooth-menu" href="#home">Accueil</a></li>
+                  <li><a class="smooth-menu" href="#about">À propos</a></li>
+                  <li><a class="smooth-menu" href="#resume">Parcours</a></li>
+                  <li><a class="smooth-menu" href="#services">Compétences</a></li>
+                  <li><a class="smooth-menu" href="#portfolio">Portfolio</a></li>
+                  <li><a class="smooth-menu" href="#contact">Contact</a></li>
+                </ul>
+                <ul lang="en" class="nav navbar-nav navbar-right">
+                  <li class="active"><a class="smooth-menu" href="#home">Home</a></li>
+                  <li><a class="smooth-menu" href="#about">About</a></li>
+                  <li><a class="smooth-menu" href="#resume">Resume</a></li>
+                  <li><a class="smooth-menu" href="#services">Skills</a></li>
+                  <li><a class="smooth-menu" href="#portfolio">Portfolio</a></li>
+                  <li><a class="smooth-menu" href="#contact">Contact</a></li>
+                </ul>
               </div>
             </div>
-          </div>
+          </nav>
         </div>
-
-        <!--main menu ends-->
       </div>
     </div>
   </header>
 
-  <!--navigation area ends-->
-
-  <!--slider area starts-->
-  <div id="home"></div>
-  <div class="banner-area" id="slider-area">
+  <!-- Hero / Bannière -->
+  <section id="home" class="banner-area" aria-label="Accueil">
     <div id="particles-js"></div>
     <div class="banner-table">
       <div class="banner-table-cell">
@@ -128,12 +92,12 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h2 lang="fr">Samuel BUSSON - Développeur</h2>
-                <h2 lang="en">Samuel BUSSON - Game developer</h2>
+                <h2 lang="fr">Samuel BUSSON — Développeur</h2>
+                <h2 lang="en">Samuel BUSSON — Game Developer</h2>
                 <div class="text-affect"></div>
                 <p class="banner-btn"><a class="smooth-menu" href="#contact">Contact</a></p>
                 <div class="clearfix"></div>
-                <div class="mouse-icon hidden-sm hidden-xs">
+                <div class="mouse-icon hidden-sm hidden-xs" aria-hidden="true">
                   <div class="wheel"></div>
                 </div>
               </div>
@@ -142,92 +106,42 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!--slider area ends-->
-
-  <!--about area starts-->
-
-  <!--
-*************************************
-* * * * * *  FRENCH PART * * * * * *
-*************************************
--->
-
-  <div id="about" class="about-area section-padding" lang="fr">
+  <!-- À propos — Version française -->
+  <section id="about" class="about-area section-padding" lang="fr">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-5 col-md-5">
           <div class="about-left wow fadeInDown" data-wow-delay="0.4s">
-            <img src="images/about/about.jpg" alt="profile image">
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-7 col-md-7">
-          <div class="about-right wow fadeInDown" data-wow-delay="0.8s" lang="fr">
-            <h1><span class="text-primary">Samuel Busson </span> programmeur gameplay</h1>
-            <!--change name and designation here-->
-            <p>J'ai 28 ans et je travaille dans le domaine des jeux vidéo depuis plus de 5 ans. Passionné par la
-              création de jeux,
-              j'aime donner vie à des univers interactifs et procurer des sensations inoubliables aux joueurs. C'est
-              pourquoi je m'améliore continuellement dans ma vie professionnelle grâce à mes projets personnels et ma
-              curiosité. </p>
-            <div class="socials">
-              <ul>
-                <li><a href="https://www.linkedin.com/in/samuel-busson-0b5322177/" target="_blank"><i
-                      class="fa fa-linkedin"></i></a></li>
-                <li>
-                  <a href="https://samuelbusson.itch.io" target="_blank">
-                    <img class="rotateimg45" src="images/about/itchio.png" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/SamuelBUSSON" target="_blank">
-                    <img class="rotateimg45" src="images/about/github.png" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--
-  *************************************
-  * * * * * *  ENGLISH PART * * * * * *
-  *************************************
--->
-
-  <div id="about" class="about-area section-padding" lang="en">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-5 col-md-5">
-          <div class="about-left wow fadeInDown" data-wow-delay="0.4s">
-            <img src="images/about/about.png" alt="profile image">
+            <img src="images/about/about.jpg" alt="Photo de profil de Samuel Busson">
           </div>
         </div>
         <div class="col-xs-12 col-sm-7 col-md-7">
           <div class="about-right wow fadeInDown" data-wow-delay="0.8s">
-            <h1><span class="text-primary">Samuel Busson </span> game developer</h1>
-            <!--change name and designation here-->
-            <p>
-              I'm 27 years old and I've been studying computer and video games for 5 years.
-              I've continued to learn at the ENJMIN in Angoulême. I'am specialized in gameplay and visual effects
-              programming (shaders, post-process, VFX, ...).
-              These years of study have allowed me to realize various projects that you will discover below.
-            </p>
+            <h1><span class="text-primary">Samuel Busson</span> — programmeur gameplay</h1>
+            <p>J'ai 28 ans et je travaille dans le domaine des jeux vidéo depuis plus de 5 ans. Passionné par la
+              création de jeux, j'aime donner vie à des univers interactifs et procurer des sensations inoubliables
+              aux joueurs. C'est pourquoi je m'améliore continuellement dans ma vie professionnelle grâce à mes
+              projets personnels et ma curiosité.</p>
             <div class="socials">
               <ul>
-                <li><a href="https://www.linkedin.com/in/samuel-busson-0b5322177/" target="_blank"><i
-                      class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://samuelbusson.itch.io" target="_blank">
-                    <img class="rotateimg45" src="images/about/itchio.png" />
+                <li>
+                  <a href="https://www.linkedin.com/in/samuel-busson-0b5322177/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/SamuelBUSSON" target="_blank">
-                    <img class="rotateimg45" src="images/about/github.png" />
+                  <a href="https://samuelbusson.itch.io" target="_blank" rel="noopener noreferrer"
+                    aria-label="itch.io">
+                    <img class="rotateimg45" src="images/about/itchio.png" alt="itch.io">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/SamuelBUSSON" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <img class="rotateimg45" src="images/about/github.png" alt="GitHub">
                   </a>
                 </li>
               </ul>
@@ -236,19 +150,53 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!--about area ends-->
+  <!-- À propos — Version anglaise -->
+  <section class="about-area section-padding" lang="en">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 col-md-5">
+          <div class="about-left wow fadeInDown" data-wow-delay="0.4s">
+            <img src="images/about/about.png" alt="Samuel Busson profile picture">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7">
+          <div class="about-right wow fadeInDown" data-wow-delay="0.8s">
+            <h1><span class="text-primary">Samuel Busson</span> — game developer</h1>
+            <p>I'm 28 years old and I've been working in the video game industry for over 5 years. I studied at
+              ENJMIN in Angoulême and specialise in gameplay and visual effects programming (shaders, post-process,
+              VFX…). These years of study have allowed me to realise various projects that you'll discover below.</p>
+            <div class="socials">
+              <ul>
+                <li>
+                  <a href="https://www.linkedin.com/in/samuel-busson-0b5322177/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://samuelbusson.itch.io" target="_blank" rel="noopener noreferrer"
+                    aria-label="itch.io">
+                    <img class="rotateimg45" src="images/about/itchio.png" alt="itch.io">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/SamuelBUSSON" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <img class="rotateimg45" src="images/about/github.png" alt="GitHub">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!--resume area starts-->
-
-  <!--
-*************************************
-* * * * * *  FRENCH PART * * * * * *
-*************************************
--->
-
-  <div id="resume" class="resume-area section-padding" lang="fr">
+  <!-- Parcours — Version française -->
+  <section id="resume" class="resume-area section-padding" lang="fr">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -261,25 +209,25 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <h5 lang="fr">Etudes</h5>
+          <h5>Études</h5>
           <div class="timeline">
             <div class="wrapper right">
               <div class="content">
                 <div class="education-area wow fadeInDown" data-wow-delay="0.2s">
-                  <h6>2019-2021</h6>
+                  <h6>2019–2021</h6>
                   <h4>Master JMIN</h4>
                   <h3>École Nationale des Jeux et des Médias Interactifs et Numériques (ENJMIN)</h3>
-                  <p>En spécialité programmation, j'ai enrichis mon savoir dans ce domaine et améliorer mon travail
-                    d'équipe avec tout les corps de métier.</p>
+                  <p>En spécialité programmation, j'ai enrichi mon savoir dans ce domaine et amélioré mon travail
+                    d'équipe avec tous les corps de métier.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
-                <div class="education-area wow fadeInDown" data-wow-delay="0.6s">
-                  <h6>2018-2019</h6>
-                  <h4>Baccalauréat Avec Majeur en Conception de Jeux Vidéo</h4>
-                  <h3>Université du Québec À Chicoutimi (UQAC)</h3>
+                <div class="education-area wow fadeInDown" data-wow-delay="0.4s">
+                  <h6>2018–2019</h6>
+                  <h4>Baccalauréat avec majeure en Conception de Jeux Vidéo</h4>
+                  <h3>Université du Québec à Chicoutimi (UQAC)</h3>
                   <p>Ce double diplôme m'a beaucoup appris sur la création de jeux vidéo.</p>
                 </div>
               </div>
@@ -287,7 +235,7 @@
             <div class="wrapper right">
               <div class="content">
                 <div class="education-area wow fadeInDown" data-wow-delay="0.6s">
-                  <h6>2016-2018</h6>
+                  <h6>2016–2018</h6>
                   <h4>DUT Informatique</h4>
                   <h3>Université de Nantes</h3>
                   <p>Ce diplôme m'a enseigné les bases nécessaires que j'ai su approfondir au fil du temps.</p>
@@ -297,81 +245,77 @@
           </div>
         </div>
         <div class="col-md-6">
-          <h5>Experience professionnelle</h5>
+          <h5>Expérience professionnelle</h5>
           <div class="timeline">
-             <div class="wrapper right">
+            <div class="wrapper right">
               <div class="content">
-                <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
-                  <h6>2025-Aujourd'hui</h6>
+                <div class="experience-area wow fadeInDown" data-wow-delay="0.2s">
+                  <h6>2025–Aujourd'hui</h6>
                   <h4 class="mb-2">Triskell Interactive</h4>
-                  <h3 class="mb-2">Projet Non Annoncé (Unity)</h3>
-                  <p>
-                    Ce jeu de gestion m'a familiariser avec des systems plus complexe, j'utilise aussi les nouveaux outils que propose Unity tel que UI Toolkit
-                  </p>
+                  <h3 class="mb-2">Projet non annoncé (Unity)</h3>
+                  <p>Ce jeu de gestion m'a familiarisé avec des systèmes plus complexes ; j'utilise aussi les
+                    nouveaux outils que propose Unity tels que UI Toolkit.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
-                <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
-                  <h6>2023-2024</h6>
+                <div class="experience-area wow fadeInDown" data-wow-delay="0.3s">
+                  <h6>2023–2024</h6>
                   <h4 class="mb-2">Endroad</h4>
-                  <h3 class="mb-2">Projet Non Annoncé (Unreal)</h3>
-                  <p>
-                    Il s'agit d'un jeu multijoueur à la 3e personne réalisé sur Unreal avec l'aide d'un ECS (flecs),
-                    j'ai pu découvrir la programmation online ainsi qu'approfondir mes connaissances en C++
-                  </p>
+                  <h3 class="mb-2">Projet non annoncé (Unreal)</h3>
+                  <p>Il s'agit d'un jeu multijoueur à la 3e personne réalisé sur Unreal avec un ECS (flecs).
+                    J'ai pu découvrir la programmation online, le Gameplay Ability System d'Unreal et approfondir mes connaissances en C++.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
                 <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
-                  <h6>2021-2023</h6>
+                  <h6>2021–2023</h6>
                   <h4 class="mb-2">Endroad</h4>
-                  <h3 class="mb-2"> <a
-                      href="https://store.steampowered.com/app/2295970/GOLDORAK__Le_Festin_des_Loups/?l=french"
-                      target="_blank"> Goldorak : Le Festin des Loups (Unity) </a></h3>
-                  <p>
-                    En tant que programmeur gameplay j'ai eu la chance de réaliser les 3C ce jeu et bien d'autres
-                    systems en ECS
+                  <h3 class="mb-2">
+                    <a href="https://store.steampowered.com/app/2295970/GOLDORAK__Le_Festin_des_Loups/?l=french"
+                      target="_blank" rel="noopener noreferrer">Goldorak : Le Festin des Loups (Unity)</a>
+                  </h3>
+                  <p>En tant que programmeur gameplay, j'ai réalisé les 3C du jeu et de nombreux autres systèmes
+                    en ECS.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
-                <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
+                <div class="experience-area wow fadeInDown" data-wow-delay="0.5s">
                   <h6>2021</h6>
                   <h4 class="mb-2">Ubisoft</h4>
-                  <h3 class="mb-2"> <a href="https://store.epicgames.com/fr/p/assassins-creed-mirage" target="_blank">
-                      Stage - Assassin's Creed Mirage - (6 mois) </a></h3>
-                  <p>
-                    J'ai effectué des prototypes et des recherches afin d'aider l'équipe de design à trouver les
-                    mécaniques du jeu
-                  </p>
+                  <h3 class="mb-2">
+                    <a href="https://store.epicgames.com/fr/p/assassins-creed-mirage" target="_blank"
+                      rel="noopener noreferrer">Stage — Assassin's Creed Mirage (6 mois)</a>
+                  </h3>
+                  <p>J'ai effectué des prototypes et des recherches afin d'aider l'équipe de design à trouver
+                    les mécaniques du jeu.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
-                <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
+                <div class="experience-area wow fadeInDown" data-wow-delay="0.6s">
                   <h6>2020</h6>
-                  <h4 class="mb-2">CENTRE DE RECHERCHES SUR LA COGNITION ET L’APPRENTISSAGE (CeRCA)</h4>
-                  <h3 class="mb-2">Stage de développement d'un jeu pour la recherche cognitive (10 semaines)</h3>
-                  <p>
-                    J'ai réalisé un jeu qui avait pour but de tester la mémoire des joueurs selon la caméra utilisée
-                  </p>
+                  <h4 class="mb-2">Centre de Recherches sur la Cognition et l'Apprentissage (CeRCA)</h4>
+                  <h3 class="mb-2">Stage — Développement d'un jeu pour la recherche cognitive (10 semaines)</h3>
+                  <p>J'ai réalisé un jeu dont le but était de tester la mémoire des joueurs selon la caméra
+                    utilisée.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
-                <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
+                <div class="experience-area wow fadeInDown" data-wow-delay="0.7s">
                   <h6>2018</h6>
                   <h4 class="mb-2">Antest</h4>
-                  <h3 class="mb-2">Stage de développement d'application web (10 semaines)</h3>
-                  <p>J'ai développé un module d'ERP en js/php en MVC. J'ai dû m'imprégner du code existant afin d'y
-                    ajouter le mien. </p>
+                  <h3 class="mb-2">Stage — Développement d'application web (10 semaines)</h3>
+                  <p>J'ai développé un module d'ERP en JS/PHP en MVC. J'ai dû m'imprégner du code existant afin
+                    d'y intégrer le mien.</p>
                 </div>
               </div>
             </div>
@@ -379,20 +323,15 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!--
-*************************************
-* * * * * *  ENGLISH PART * * * * * *
-*************************************
--->
-
-  <div id="resume" class="resume-area section-padding" lang="en">
+  <!-- Parcours — Version anglaise -->
+  <section class="resume-area section-padding" lang="en">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="section-header">
-            <h2>Resume</h2>
+            <h2>My Resume</h2>
             <p class="line1"></p>
             <p class="line2"></p>
           </div>
@@ -405,73 +344,68 @@
             <div class="wrapper right">
               <div class="content">
                 <div class="education-area wow fadeInDown" data-wow-delay="0.2s">
-                  <h6>2019-2021</h6>
+                  <h6>2019–2021</h6>
                   <h4>Master JMIN</h4>
                   <h3>École Nationale des Jeux et des Médias Interactifs et Numériques (ENJMIN)</h3>
-                  <p>In programming speciality, I improve my knwoledge of video game programming.</p>
+                  <p>Specialising in programming, I deepened my technical knowledge and improved my teamwork
+                    with all game production disciplines.</p>
+                </div>
+              </div>
+            </div>
+            <div class="wrapper right">
+              <div class="content">
+                <div class="education-area wow fadeInDown" data-wow-delay="0.4s">
+                  <h6>2018–2019</h6>
+                  <h4>Bachelor's with a Major in Video Game Design</h4>
+                  <h3>Université du Québec à Chicoutimi (UQAC)</h3>
+                  <p>This joint degree taught me a great deal about programming video games.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
                 <div class="education-area wow fadeInDown" data-wow-delay="0.6s">
-                  <h6>2018-2019</h6>
-                  <h4>Bachelor's Degree With Major in Video Game Design</h4>
-                  <h3>Université du Québec À Chicoutimi (UQAC)</h3>
-                  <p>Thanks to this year I found my vocation. This diploma taught me a lot about designing and
-                    programming video games.</p>
-                </div>
-              </div>
-            </div>
-            <div class="wrapper right">
-              <div class="content">
-                <div class="education-area wow fadeInDown" data-wow-delay="0.6s">
-                  <h6>2016-2018</h6>
-                  <h4>Computer science </h4>
+                  <h6>2016–2018</h6>
+                  <h4>Computer Science (DUT)</h4>
                   <h3>Université de Nantes</h3>
-                  <p>2 years in computer science to learn the basics and then more advanced programming knowledge. </p>
+                  <p>Two years in computer science to learn the fundamentals and then more advanced programming
+                    knowledge.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <h5>Professional</h5>
+          <h5>Professional Experience</h5>
           <div class="timeline">
             <div class="wrapper right">
               <div class="content">
                 <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
                   <h6>2020</h6>
-                  <h4 class="mb-2">CENTRE DE RECHERCHES SUR LA COGNITION ET L’APPRENTISSAGE (CeRCA)</h4>
-                  <h3 class="mb-2">Internship - Scientific video game - (10 weeks)</h3>
-                  <p>
-                    We were two programmers to develop the game, I was also the lead.
-                  </p>
+                  <h4 class="mb-2">Centre de Recherches sur la Cognition et l'Apprentissage (CeRCA)</h4>
+                  <h3 class="mb-2">Internship — Scientific video game (10 weeks)</h3>
+                  <p>Two programmers developed the game; I also held the lead developer role.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
-                <div class="experience-area wow fadeInDown" data-wow-delay="0.4s">
+                <div class="experience-area wow fadeInDown" data-wow-delay="0.6s">
                   <h6>2018</h6>
                   <h4 class="mb-2">Antest</h4>
-                  <h3 class="mb-2">Internship - Web development (10 weeks)</h3>
-                  <p>
-                    During this intership, I developed an ERP module in JS/PHP with MVC as a software design pattern.
-                    In order to add my code, i needed to learn the current design of the existing code.
-                  </p>
+                  <h3 class="mb-2">Internship — Web development (10 weeks)</h3>
+                  <p>I developed an ERP module in JS/PHP using the MVC pattern, learning the existing codebase
+                    before integrating my own contributions.</p>
                 </div>
               </div>
             </div>
             <div class="wrapper right">
               <div class="content">
                 <div class="experience-area wow fadeInDown" data-wow-delay="0.8s">
-                  <h6>2016-2018</h6>
+                  <h6>2016–2018</h6>
                   <h4 class="mb-2">Maro Océans</h4>
-                  <h3 class="mb-2">Préparateur de palettes</h3>
-                  <p>
-                    Teamwork, organization and rigour are skills that I've honed in this job.
-                  </p>
+                  <h3 class="mb-2">Warehouse operative</h3>
+                  <p>Teamwork, organisation, and rigour are skills I honed in this role.</p>
                 </div>
               </div>
             </div>
@@ -479,98 +413,74 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!--resume area ends-->
-
-  <!--portfolio area starts-->
-
-
-  <!--portfolio zoom starts-->
-
-
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  <!-- Modale Portfolio -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-body">
-          <div class="">
-            <div class="row">
-              <div class="col-md-12">
-                <img id="modalImg" alt="Portfolio image" src="images/portfolio/loader.gif" />
-              </div>
+          <div class="row">
+            <div class="col-md-12">
+              <img id="modalImg" alt="Image du projet" src="images/portfolio/loader.gif">
             </div>
-            <div class="row">
-              <div class="col-md-12 align-self-center">
-                <div class="section-header">
-                  <h3 id="modalTitle">TITRE</h3>
-                  <p class="line2"></p>
-                </div>
-                <div id="modalText">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 align-self-center">
+              <div class="section-header">
+                <h3 id="modalTitle">Titre</h3>
+                <p class="line2"></p>
               </div>
+              <div id="modalText"></div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
-
     </div>
   </div>
-  </div>
-  <!--portfolio zoom end-->
 
-
-  <div id="portfolio" class="portfolio-area section-padding">
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio-area section-padding">
     <div class="container">
       <div class="row">
         <div class="section-header">
-          <h2>PORTFOLIO</h2>
+          <h2>Portfolio</h2>
           <p class="line1"></p>
           <p class="line2"></p>
         </div>
       </div>
 
-
       <div class="row">
 
-        <!-- GOLDORAK -->
+        <!-- Goldorak -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
-            <div class="view img" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/goldorak.jpg" alt="portfolio image">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.2s">
+            <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <img src="images/portfolio/small/goldorak.jpg" alt="Goldorak : Le Festin des Loups">
               <div class="hidden Mimg" data-src="images/portfolio/goldorak.jpg"></div>
               <div class="hidden Mtext" data-title="Goldorak">
-                Projet professionnel réalisé au sein <a class="link4" href="https://www.endroad.fr/"
-                  target="blank">ENDROAD</a> et édité par <a class="link4" href="https://www.microids.com/fr/"
-                  target="blank">Microids</a> dans une équipe indépendant d'une quinzaines de personnes. Le jeu est
-                sorti sur PS4, PS5, Xbox One, Xbox Series et PC.
-                </br></br>
-
-                Ce projet m'a beaucoup apporté sur tout les aspects du développement de jeu vidéo. J'ai notamment
-                réaliser la migration en ECS entre la vertical slice et la production ce qui m'a permis de bien
-                comprendre l'utilisation d'un ECS. Ainsi j'ai pu réaliser beaucoup de systèmes au sein du jeu notament :
-                les 3C, l'IA en 3e personne, l'IA en shoot'em up, les inputs, le spawn de fx, camera shake,
-                post-process,
-                ...</br>
-                Ce projet a été réalisé à l'aide d'un ECS maison inspiré de flecs par Sander Mertens
-                </br>
-                </br>
-                <a class="link4" href="https://store.steampowered.com/app/2295970/GOLDORAK__Le_Festin_des_Loups/"
-                  target="blank">Lien
-                  du jeu</a></br></br>
+                Projet professionnel réalisé au sein d'<a class="link4" href="https://www.endroad.fr/"
+                  target="_blank" rel="noopener noreferrer">Endroad</a> et édité par <a class="link4"
+                  href="https://www.microids.com/fr/" target="_blank" rel="noopener noreferrer">Microids</a>,
+                dans une équipe indépendante d'une quinzaine de personnes. Le jeu est sorti sur PS4, PS5, Xbox
+                One, Xbox Series et PC.
+                <br><br>
+                Ce projet m'a beaucoup apporté sur tous les aspects du développement. J'ai notamment réalisé la
+                migration en ECS entre la vertical slice et la production, ce qui m'a permis de bien comprendre
+                l'utilisation d'un ECS. J'ai ainsi pu concevoir de nombreux systèmes : les 3C, l'IA en 3e
+                personne, l'IA en shoot'em up, les inputs, le spawn de VFX, le camera shake, le post-process…
+                <br><br>
+                <a class="link4"
+                  href="https://store.steampowered.com/app/2295970/GOLDORAK__Le_Festin_des_Loups/"
+                  target="_blank" rel="noopener noreferrer">Voir le jeu sur Steam</a><br><br>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/FKJlVoOnTcw?si=Kl6n9jXTFtZ4qN3A"
-                  title="YouTube video player" frameborder="0"
+                  title="Trailer Goldorak" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-                </br>
               </div>
               <div class="gallery-text">
                 <h2>Goldorak : Le Festin des Loups</h2>
@@ -579,32 +489,27 @@
           </div>
         </div>
 
-        <!-- assassins-creed-mirage  -->
+        <!-- Assassin's Creed Mirage -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.3s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/assassins_creed_mirage_portfolio.jpg" alt="portfolio image">
+              <img src="images/portfolio/small/assassins_creed_mirage_portfolio.jpg"
+                alt="Assassin's Creed Mirage">
               <div class="hidden Mimg" data-src="images/portfolio/assassin.jpg"></div>
               <div class="hidden Mtext" data-title="Assassin's Creed Mirage">
-                Réalisé sur le moteur d'interne <span class="bold-span">d'Ubisoft (Anvil)</span>, j'ai pu <span
-                  class="bold-span">améliorer mes connaissances</span> en <span class="bold-span">C++</span> ainsi que
-                la programmation à l'échelle d'un projet <span class="bold-span">AAA</span>. J'ai participé à la
-                phase de pré-production de ce projet,
-                j'ai donc pu <span class="bold-span">prototyper des mécaniques</span> et investiguer sur des
-                outils réaliser pour les précédents
-                Assassin's Creed
-
-                </br>
-                </br>
-                <a class="link4" href="https://store.epicgames.com/fr/p/assassins-creed-mirage" target="blank">Lien du
-                  jeu</a>
-                </br></br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/mMV4rEb0F3o?si=ZBdUX2JhNMKkuIp3"
-                  title="YouTube video player" frameborder="0"
+                Réalisé sur le moteur interne <span class="bold-span">d'Ubisoft (Anvil)</span>, j'ai pu <span
+                  class="bold-span">améliorer mes connaissances</span> en <span class="bold-span">C++</span>
+                ainsi que la programmation à l'échelle d'un projet <span class="bold-span">AAA</span>. J'ai
+                participé à la phase de pré-production : <span class="bold-span">prototypage de mécaniques</span>
+                et investigation sur les outils des précédents Assassin's Creed.
+                <br><br>
+                <a class="link4" href="https://store.epicgames.com/fr/p/assassins-creed-mirage" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a><br><br>
+                <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/mMV4rEb0F3o?si=ZBdUX2JhNMKkuIp3"
+                  title="Trailer Assassin's Creed Mirage" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </br>
-
               </div>
               <div class="gallery-text">
                 <h2>Assassin's Creed Mirage</h2>
@@ -613,31 +518,26 @@
           </div>
         </div>
 
-		<!-- One Minute -->
+        <!-- One Minute -->
         <div class="col-sm-4 col-md-6 col-lg-4">
           <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
-            <div class="view img" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/one_minute.jpg" alt="portfolio image">
+            <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <img src="images/portfolio/small/one_minute.jpg" alt="One Minute">
               <div class="hidden Mimg" data-src="images/portfolio/one_minute_gameplay.jpg"></div>
               <div class="hidden Mtext" data-title="One Minute">
-                Solo dev, projet réalisé pour apprendre à utiliser Godot et l'API de steam (Leaderbord, stats et inventaire), je voulais faire un jeu simple et rapide à créer pour apprendre.
-                </br>
-                </br>
-
-                <i>
-                  Plongez dans un chaos frénétique avec One Minute, un roguelite rapide et addictif ! Débloquez des mini-jeux variés, collectionnez des skins de curseurs et améliorez vos scores pour briller dans le classement mondial.
-                </i>
-
-                </br>
-                </br>
-                <a class="link4" href="https://store.steampowered.com/app/3301260/One_Minute/" target="blank">
-                  Lien
-                  du jeu</a></br>
-                </br>
-
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/TGI9pcnRvws?si=Jp_wc33Z756oXXVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </br>
-                </br>
+                Projet solo réalisé pour apprendre Godot et l'API Steam (leaderboard, stats et inventaire).
+                <br><br>
+                <i>Plongez dans un chaos frénétique avec One Minute, un roguelite rapide et addictif !
+                  Débloquez des mini-jeux variés, collectionnez des skins de curseurs et améliorez vos scores
+                  pour briller dans le classement mondial.</i>
+                <br><br>
+                <a class="link4" href="https://store.steampowered.com/app/3301260/One_Minute/" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu sur Steam</a><br><br>
+                <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/TGI9pcnRvws?si=Jp_wc33Z756oXXVk"
+                  title="Trailer One Minute" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div class="gallery-text">
                 <h2>One Minute</h2>
@@ -649,38 +549,28 @@
 
       <div class="row">
 
-		 <!-- Froggy the revenge -->
+        <!-- Froggy the Revenge -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
-            <div class="view img" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/froggy_the_revenge.png" alt="portfolio image">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.2s">
+            <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <img src="images/portfolio/small/froggy_the_revenge.png" alt="Froggy the Revenge">
               <div class="hidden Mimg" data-src="images/portfolio/froggy.gif"></div>
-              <div class="hidden Mtext" data-title="Froggy the revenge">
-                Jam réalisée en 48h pour la GMTK 2023 ave comme thème "Roles Reversed". J'étais le seul programeur sur
-                cette jam que nous avons réalisé sans pression et avec un sommeil sain.
-                </br>
-                </br>
-
-                <i>
-                  Les jambes de Froggy sont inutilisables depuis sont accident de voiture, fraichement sorti de
-                  l'hoptial Froggy n'a qu'une seule chose en tête : LA VENGANCE.</br>
-                  A l'aide de son fauteuil roulant et de sa langue il va montrer aux voitures qui est la véritable
-                  menace sur roue.
-                </i>
-
-                </br>
-                </br>
-                <a class="link4" href="https://thibaud-ligneul.itch.io/froggy-the-revenge" target="blank">
-                  Lien
-                  du jeu</a></br>
-                </br>
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ng9NVKuwxIk?si=I6A0fEUr9SlP6mvk"
-                  title="YouTube video player" frameborder="0"
+              <div class="hidden Mtext" data-title="Froggy the Revenge">
+                Jam réalisée en 48 h pour la GMTK 2023 avec le thème « Roles Reversed ». J'étais le seul
+                programmeur, réalisée sans pression et avec un sommeil sain.
+                <br><br>
+                <i>Les jambes de Froggy sont inutilisables depuis son accident de voiture. Fraîchement sorti de
+                  l'hôpital, Froggy n'a qu'une seule chose en tête : LA VENGEANCE.<br>
+                  À l'aide de son fauteuil roulant et de sa langue, il va montrer aux voitures qui est la
+                  véritable menace sur roue.</i>
+                <br><br>
+                <a class="link4" href="https://thibaud-ligneul.itch.io/froggy-the-revenge" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a><br><br>
+                <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/ng9NVKuwxIk?si=I6A0fEUr9SlP6mvk"
+                  title="Trailer Froggy the Revenge" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </br>
-                </br>
               </div>
               <div class="gallery-text">
                 <h2>Froggy The Revenge</h2>
@@ -689,35 +579,25 @@
           </div>
         </div>
 
-        <!-- echo of the sky  -->
+        <!-- Echo of the Sky -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.3s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/echo_of_the_sky.png" alt="portfolio image">
+              <img src="images/portfolio/small/echo_of_the_sky.png" alt="Echo of the Sky">
               <div class="hidden Mimg" data-src="images/portfolio/echo.gif"></div>
               <div class="hidden Mtext" data-title="Echo of the Sky">
-                Projet étudiant réalisé pendant<span class="bold-span"> 6 mois</span> avec une équipe comprenant tout
-                les corps de métiers nécessaires
-                à la réalsiation d'un jeu vidéo.
-                C'était aussi mon premier long projet sur <span class="bold-span">Unreal</span>, il m'a grandement
-                aidé
-                à m'améliorer sur beaucoup de
-                points tel que le travail d'équipe ou encore le<span class="bold-span"> C++</span>.
-
-                </br>
-                </br>
-                <a class="link4" href="https://vhalteix.itch.io/echo-of-the-sky" target="blank">Lien du
-                  jeu</a>
-                </br>
-
-                </br>
-                </br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6ZSgkWFbnoQ?si=C7VLXHjwxR7_gvQp"
-                  title="YouTube video player" frameborder="0"
+                Projet étudiant réalisé pendant <span class="bold-span">6 mois</span> avec une équipe
+                comprenant tous les corps de métier nécessaires à la réalisation d'un jeu vidéo. C'était aussi
+                mon premier long projet sur <span class="bold-span">Unreal</span>, qui m'a grandement aidé à
+                progresser sur le travail d'équipe et le <span class="bold-span">C++</span>.
+                <br><br>
+                <a class="link4" href="https://vhalteix.itch.io/echo-of-the-sky" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a><br><br>
+                <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/6ZSgkWFbnoQ?si=C7VLXHjwxR7_gvQp"
+                  title="Trailer Echo of the Sky" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </br>
-
               </div>
               <div class="gallery-text">
                 <h2>Echo of the Sky</h2>
@@ -726,40 +606,29 @@
           </div>
         </div>
 
-
         <!-- Palette -->
         <div class="col-sm-4 col-md-6 col-lg-4">
           <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
-            <div class="view img" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/LogoPaletteExtend.png" alt="portfolio image">
+            <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <img src="images/portfolio/small/LogoPaletteExtend.png" alt="Palette">
               <div class="hidden Mimg" data-src="images/portfolio/Palette.png"></div>
               <div class="hidden Mtext" data-title="Palette">
-                Ce projet de première année de master dont j’étais le<span class="bold-span"> seul programmeur </span>
-                était composé d’une équipe de 7 personnes.
-                Il a été réalisé pendant <span class="bold-span"> le confinement. </span>
-                C’est le premier long projet en équipe sur lequel j'ai travaillé,
-                j’ai beaucoup appris dans le domaine de la programmation ainsi que sur le <span class="bold-span">
-                  travail d’équipe à distance. </span>
-                C'est également ma première expérience avec <span class="bold-span"> Fmod. </span>
-
-                </br>
-                </br>
-                </br><a class="link4" href="https://cauliflowerz.itch.io/palette" target="blank">Lien
-                  du jeu</a></br>
-                </br>
-
-                <i>
-                  Dans le monde de Palette, les couleurs n'existent plus. Selon la couleur que vous choissisez, la même
-                  forme donnera vie à quelque chose de différent.
-                </i>
-                </br>
-                </br>
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/xyQA_7ZTrfM?si=IehV8KebkrQJKa5b"
-                  title="YouTube video player" frameborder="0"
+                Ce projet de première année de master — dont j'étais le <span class="bold-span">seul
+                  programmeur</span> dans une équipe de 7 personnes — a été réalisé pendant <span
+                  class="bold-span">le confinement</span>. Premier long projet en équipe, j'y ai beaucoup appris
+                en programmation et en <span class="bold-span">travail d'équipe à distance</span>. Première
+                expérience avec <span class="bold-span">Fmod</span>.
+                <br><br>
+                <i>Dans le monde de Palette, les couleurs n'existent plus. Selon la couleur choisie, la même
+                  forme donnera vie à quelque chose de différent.</i>
+                <br><br>
+                <a class="link4" href="https://cauliflowerz.itch.io/palette" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a><br><br>
+                <iframe width="560" height="315"
+                  src="https://www.youtube.com/embed/xyQA_7ZTrfM?si=IehV8KebkrQJKa5b"
+                  title="Trailer Palette" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
               </div>
               <div class="gallery-text">
                 <h2>Palette</h2>
@@ -767,28 +636,22 @@
             </div>
           </div>
         </div>
-
-
       </div>
 
       <div class="row">
 
-        <!-- minicraft  -->
+        <!-- Minicraft -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
-            <div class="view img" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/minicraft.png" alt="portfolio image">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.2s">
+            <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <img src="images/portfolio/small/minicraft.png" alt="Moteur C++">
               <div class="hidden Mimg" data-src="images/portfolio/minicraft.png"></div>
               <div class="hidden Mtext" data-title="Minicraft">
-                Ce projet de programmation effectué au sein du cours de programmation à l'ENJMIN avait pour objectif
-                de
-                nous familiariser
-                avec les notions de <span class="bold-span"> géométrie dans l'espace, de rendu de scène 3D, de
-                  programmation gameplay, de génération procédurale et
-                  d'optimisation. </span>
-                Nous avons utilisé la librairie <span class="bold-span">OpenGL</span> pour réaliser ce projet ainsi
-                que
-                <span class="bold-span">glew</span> et <span class="bold-span">freeglut</span>
+                Projet réalisé dans le cadre du cours de programmation à l'ENJMIN pour se familiariser avec
+                la <span class="bold-span">géométrie dans l'espace, le rendu 3D, la programmation gameplay,
+                  la génération procédurale et l'optimisation</span>. Réalisé avec <span
+                  class="bold-span">OpenGL</span>, <span class="bold-span">GLEW</span> et <span
+                  class="bold-span">freeglut</span>.
               </div>
               <div class="gallery-text">
                 <h2>Moteur C++</h2>
@@ -797,27 +660,24 @@
           </div>
         </div>
 
-        <!-- Prison break dance  -->
+        <!-- Prison Break Dance -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.3s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/PrisonBreakDance.png" alt="portfolio image">
+              <img src="images/portfolio/small/PrisonBreakDance.png" alt="Prison BreakDance">
               <div class="hidden Mimg" data-src="images/portfolio/PrisonBreakDance.jpg"></div>
               <div class="hidden Mtext" data-title="ENJAM 2019">
-                <span class="bold-span"> Seul programmeur </span> dans une équipe de 6 personnes pour 48h de jam,
-                j'avais pour mission de coder tout le jeu et de faire toutes les intégrations nécessaires (<span
-                  class="bold-span"> Wwise </span> et assets graphiques).
-                La bonne coordination d'équipe a rendu cela possible :
-                </br>
-                </br>
-                <a class="link4" href="https://youtu.be/5bFBV8p_MyE" target="blank">Voir le Trailer</a> ---- <a
-                  class="link4" href="https://giomee.itch.io/prison-breakdance" target="blank">Lien du jeu</a>
-                </br>
-                </br>
-                <i>Demain vous allez mourir. Vous et vos camarades de cellules êtes condamnés à mort. Comme dernier
-                  souhait vous avez demandé une boombox.
-                  Équipé de celle-ci, ralliez les différents prisonniers à votre cause pour faire une derniere fête.
-                </i>
+                <span class="bold-span">Seul programmeur</span> dans une équipe de 6 pour 48 h de jam. J'avais
+                pour mission de coder tout le jeu et de réaliser toutes les intégrations (<span
+                  class="bold-span">Wwise</span> et assets graphiques).
+                <br><br>
+                <a class="link4" href="https://youtu.be/5bFBV8p_MyE" target="_blank"
+                  rel="noopener noreferrer">Voir le trailer</a> —
+                <a class="link4" href="https://giomee.itch.io/prison-breakdance" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a>
+                <br><br>
+                <i>Condamnés à mort, vous et vos camarades de cellule avez demandé une boombox comme dernier
+                  souhait. Ralliez les prisonniers à votre cause pour faire une dernière fête.</i>
               </div>
               <div class="gallery-text">
                 <h2>Prison BreakDance</h2>
@@ -826,33 +686,24 @@
           </div>
         </div>
 
-        <!-- Joute Celeste  -->
+        <!-- Joute Céleste -->
         <div class="col-sm-4 col-md-6 col-lg-4">
           <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/JouteCeleste.gif" alt="portfolio image">
+              <img src="images/portfolio/small/JouteCeleste.gif" alt="Joute Céleste">
               <div class="hidden Mimg" data-src="images/portfolio/JouteCeleste.jpg"></div>
               <div class="hidden Mtext" data-title="Nano Projet">
-
-                Première expérience de travail d’équipe avec les <span class="bold-span">différentes spécialités
-                </span>
-                du jeu vidéo mais aussi première expérience dans les jeux de combat.
-                J’ai aimé créer les différentes attaques, déplacements et y associer un <span class="bold-span">
-                  gamefeel </span> satisfaisant pour le joueur.
-                J'ai utilisé pour la première fois le nouveau <span class="bold-span">Input System</span> de Unity.
-
-                </br>
-                </br>
-                <a class="link4" href="https://cauliflowerz.itch.io/jouteceleste" target="blank">Lien du jeu</a>
-                </br>
-                </br>
-
-                <i>
-                  Joute Céleste est un jeu de combat. Vous contrôlez une entité cosmique qui peut attraper et lancer
-                  astéroides, planètes et soleils. Votre but est de tuer
-                  votre nemesis afin de reprendre le contrôle de l'univers mais attention à ce que le big bang ne vous
-                  tue pas tout les 2.
-                </i>
+                Première expérience de travail en équipe avec <span class="bold-span">différentes
+                  spécialités</span> du jeu vidéo et dans les jeux de combat. J'ai apprécié créer les attaques,
+                les déplacements et leur associer un <span class="bold-span">gamefeel</span> satisfaisant.
+                Première utilisation du nouveau <span class="bold-span">Input System</span> de Unity.
+                <br><br>
+                <a class="link4" href="https://cauliflowerz.itch.io/jouteceleste" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a>
+                <br><br>
+                <i>Joute Céleste est un jeu de combat où vous contrôlez une entité cosmique capable d'attraper
+                  et de lancer astéroïdes, planètes et soleils. Tuez votre nemesis avant que le big bang ne
+                  vous emporte tous les deux.</i>
               </div>
               <div class="gallery-text">
                 <h2>Joute Céleste</h2>
@@ -860,25 +711,23 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="row">
 
-        <!-- launchpad  -->
+        <!-- Jeu expérimental / Launchpad -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.2s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/CubeNotAGame.png" alt="portfolio image">
+              <img src="images/portfolio/small/CubeNotAGame.png" alt="Jeu expérimental Launchpad">
               <div class="hidden Mimg" data-src="images/portfolio/CubeNotAGame.png"></div>
               <div class="hidden Mtext" data-title="Launchpad et Jeu">
-                Le but de ce projet solo était d'utiliser un <span class="bold-span"> contrôleur alternatif </span> et
-                d'expérimenter des <span class="bold-span"> shaders style rétro-futuriste, </span>
-                j'ai dû adapter une <span class="bold-span"> librairie C# </span> afin de gérer les entrées et sorties
-                d'informations du Launchpad pour la faire fonctionner sur Unity.
-                </br></br>
-                <a class="link4" href="https://youtu.be/nFz4INkivq0" target="blank">Cliquer pour voir une
-                  démonstration</a>
+                Projet solo utilisant un <span class="bold-span">contrôleur alternatif</span> et des <span
+                  class="bold-span">shaders style rétro-futuriste</span>. J'ai adapté une <span
+                  class="bold-span">librairie C#</span> pour gérer les entrées/sorties du Launchpad sous Unity.
+                <br><br>
+                <a class="link4" href="https://youtu.be/nFz4INkivq0" target="_blank"
+                  rel="noopener noreferrer">Voir la démonstration</a>
               </div>
               <div class="gallery-text">
                 <h2>Jeu expérimental</h2>
@@ -887,27 +736,22 @@
           </div>
         </div>
 
-        <!-- Fate Smith  -->
+        <!-- FateSmith -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.3s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/FateSmith.png" alt="portfolio image">
+              <img src="images/portfolio/small/FateSmith.png" alt="FateSmith">
               <div class="hidden Mimg" data-src="images/portfolio/FateSmith.png"></div>
               <div class="hidden Mtext" data-title="Global GameJam 2020">
-                Pour optimiser le travail de cette gamejam, mon co-programmeur et moi avons créé un système permettant
-                d'ajouter facilement du contenu via de simples fichiers CSV.
-                </br>
-                </br>
-                <a class="link4" href="https://bourbabour.itch.io/fatesmith" target="blank">Lien du jeu</a>
-                </br>
-                </br>
-
-                <i>
-                  Imaginez une bataille médiévale, imaginez les bruits d'épées, les flèches sifflées, les cris de
-                  douleur et de rage. Dans ce jeu vous incarnez un forgeron
-                  installé au milieu de la bataille, votre but est de faire gagner votre camp en répondant correctement
-                  aux requêtes des soldats.
-                </i>
+                Pour optimiser le travail de cette game jam, mon co-programmeur et moi avons créé un système
+                d'ajout de contenu via de simples fichiers CSV.
+                <br><br>
+                <a class="link4" href="https://bourbabour.itch.io/fatesmith" target="_blank"
+                  rel="noopener noreferrer">Voir le jeu</a>
+                <br>
+                <i>Imaginez une bataille médiévale, les bruits d'épées, les flèches qui sifflent, les cris de
+                  douleur et de rage. Vous incarnez un forgeron installé au milieu de la bataille ; votre but
+                  est de faire gagner votre camp en répondant aux requêtes des soldats.</i>
               </div>
               <div class="gallery-text">
                 <h2>FateSmith</h2>
@@ -916,55 +760,46 @@
           </div>
         </div>
 
-        <!-- hellblaze  -->
+        <!-- HellBlaze -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="gallery-items wow fadeInLeft" data-wow-delay="0.4s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/HellBlaze.png" alt="portfolio image">
+              <img src="images/portfolio/small/HellBlaze.png" alt="HellBlaze">
               <div class="hidden Mimg" data-src="images/portfolio/HellBlaze.png"></div>
               <div class="hidden Mtext" data-title="HellBlaze">
-                Lors de mon année au Québec, mon équipe de 8 programmeurs et moi avons créé notre premier jeu : <span
-                  class="bold-span">HellBlaze</span> un RPG sur Unity.
-                Contrairement aux autres projets, l'outil de versionning utilisé était <span class="bold-span">
-                  Perforce
-                </span> </br> </br>
-
-
-                <a class="link4" href="https://www.youtube.com/watch?v=9xdEKtRHqu4" target="blank">Trailer : Cliquer
-                  pour voir le Trailer</a> </br></br>
-
-                <i>Le joueur y incarne un démon déchu, cherchant vengance, sa mission sera de tuer ses anciens frères
-                  d'armes afin de progresser dans les niveaux et gagner en puissance.</i>
-
+                Lors de mon année au Québec, une équipe de 8 programmeurs et moi avons créé notre premier jeu :
+                <span class="bold-span">HellBlaze</span>, un RPG sur Unity. Contrairement aux autres projets,
+                l'outil de versioning utilisé était <span class="bold-span">Perforce</span>.
+                <br><br>
+                <a class="link4" href="https://www.youtube.com/watch?v=9xdEKtRHqu4" target="_blank"
+                  rel="noopener noreferrer">Voir le trailer</a>
+                <br><br>
+                <i>Le joueur incarne un démon déchu en quête de vengeance, qui devra tuer ses anciens frères
+                  d'armes pour progresser et gagner en puissance.</i>
               </div>
-
               <div class="gallery-text">
                 <h2>HellBlaze</h2>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="row">
 
-        <!-- halite -->
+        <!-- Halite -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
-            <div class="view img" href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/Halite.png" alt="portfolio image">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.2s">
+            <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
+              <img src="images/portfolio/small/Halite.png" alt="IA Halite III">
               <div class="hidden Mimg" data-src="images/portfolio/Halite.png"></div>
               <div class="hidden Mtext" data-title="Behavior Tree">
-                <a class="link4" href="https://2018.halite.io/" target="_blank"> Halite</a> est un challenge de
-                création
-                d’intelligence artificielle.
-                Le joueur ayant obtenu le plus d’Halite dans une partie gagne, les différentes entités gérées par l’IA
-                peuvent récolter de l’Halite.
-                Avec mon binôme nous avons décidé d’utiliser un <span class="bold-span"> behavior tree </span> pour
-                gérer ces différentes entités.
-                Pour ce projet, nous avons utilisé la librairie <a class="link4"
-                  href="https://github.com/arvidsson/BrainTree" target="_blank"> BrainTree </a>.
+                <a class="link4" href="https://2018.halite.io/" target="_blank"
+                  rel="noopener noreferrer">Halite</a> est un challenge de création d'intelligence
+                artificielle. Avec mon binôme, nous avons utilisé un <span class="bold-span">behavior
+                  tree</span> via la librairie <a class="link4"
+                  href="https://github.com/arvidsson/BrainTree" target="_blank"
+                  rel="noopener noreferrer">BrainTree</a> pour gérer les entités.
               </div>
               <div class="gallery-text">
                 <h2>IA (Halite III)</h2>
@@ -973,18 +808,17 @@
           </div>
         </div>
 
-        <!-- CeRCA  -->
+        <!-- Stage CeRCA -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.3s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/cerca.jpg" alt="portfolio image">
+              <img src="images/portfolio/small/cerca.jpg" alt="Stage CeRCA 2020">
               <div class="hidden Mimg" data-src="images/portfolio/stage.png"></div>
               <div class="hidden Mtext" data-title="TPS / FPS">
-                Ce stage avait pour objectif de créer un jeu pour la recherche ayant pour but d'effectuer diverses
-                analyses sur la différence entre une caméra TPS et FPS.
-                Nous avons utilisé la librairie<span class="bold-span"> Unity Atoms pour proscrire les singletons
-                </span> de ce projet et améliorer la <span class="bold-span"> modularité. </span>
-                J'ai notamment développé un outil pour tester au runtime la modification des différents paramètres.
+                Ce stage avait pour objectif de créer un jeu de recherche analysant les différences entre
+                caméra TPS et FPS. Nous avons utilisé <span class="bold-span">Unity Atoms</span> pour éviter
+                les singletons et améliorer la <span class="bold-span">modularité</span>. J'ai développé un
+                outil de modification des paramètres au runtime.
               </div>
               <div class="gallery-text">
                 <h2>Stage 2020 (CeRCA)</h2>
@@ -993,18 +827,17 @@
           </div>
         </div>
 
-        <!-- Four for fort -->
+        <!-- Four for Fort -->
         <div class="col-sm-4 col-md-6 col-lg-4">
           <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/FourForFort.png" alt="portfolio image">
+              <img src="images/portfolio/small/FourForFort.png" alt="WonderJam 2019">
               <div class="hidden Mimg" data-src="images/portfolio/FourForFort.png"></div>
               <div class="hidden Mtext" data-title="Four for Fort">
-                Ce jeu créé lors de la <span class="bold-span"> WonderJam 2019 à l'UQAC </span> avait pour thème
-                "Pression". Nos contraintes étaient de faire un jeu de <span class="bold-span"> course multijoueur.
-                </span>
-                Nous avons donc réalisé un jeu coopératif en 2 contre 2 où les joueurs doivent résoudre plusieurs
-                mini-jeux ensemble.
+                Ce jeu créé lors de la <span class="bold-span">WonderJam 2019 à l'UQAC</span> avait pour
+                thème « Pression » et la contrainte d'un jeu de <span class="bold-span">course
+                  multijoueur</span>. Nous avons réalisé un jeu coopératif 2 contre 2 avec des mini-jeux à
+                résoudre ensemble.
               </div>
               <div class="gallery-text">
                 <h2>WonderJam 2019</h2>
@@ -1012,24 +845,21 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="row">
 
-        <!-- webgl star wars -->
+        <!-- WebGL -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInRight" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInRight" data-wow-delay="0.2s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/Vaisseau.png" alt="portfolio image">
+              <img src="images/portfolio/small/Vaisseau.png" alt="Vaisseau WebGL">
               <div class="hidden Mimg" data-src="images/portfolio/Vaisseau.gif"></div>
               <div class="hidden Mtext" data-title="Vaisseau">
-                Dans le cadre du cours <span class="bold-span"> d'Infographie </span>,
-                j'ai dû réaliser une structure en <span class="bold-span">webGL</span> donc uniquement à l'aide de
-                code,
-                cet exercice m'a permis de comprendre différents aspects tels que
-                la création de mesh, le calcul de la lumière, l'utilisation de texture et l'architecture <span
-                  class="bold-span">Left-child right-sibling </span>
+                Dans le cadre du cours <span class="bold-span">d'Infographie</span>, j'ai réalisé une
+                structure en <span class="bold-span">WebGL</span> entièrement par code. Cet exercice m'a
+                permis de comprendre la création de mesh, le calcul de lumière, l'utilisation de textures et
+                l'architecture <span class="bold-span">Left-child right-sibling</span>.
               </div>
               <div class="gallery-text">
                 <h2>WebGL</h2>
@@ -1038,21 +868,17 @@
           </div>
         </div>
 
-        <!-- rehab  -->
+        <!-- Rehab -->
         <div class="col-sm-4 col-md-6 col-lg-4">
-          <div class="gallery-items wow fadeInDown" data-wow-delay="0.4s">
+          <div class="gallery-items wow fadeInDown" data-wow-delay="0.3s">
             <div class="view img" data-toggle="modal" data-target=".bd-example-modal-lg">
-              <img src="images/portfolio/small/rehab.png" alt="portfolio image">
+              <img src="images/portfolio/small/rehab.png" alt="Rehab — Serious Game">
               <div class="hidden Mimg" data-src="images/portfolio/rehab.gif"></div>
               <div class="hidden Mtext" data-title="Serious game">
-                Dans une <span class="bold-span"> équipe de 8 développeurs et 8 artistes </span>, nous avons développé
-                un jeu sérieux traitant des problèmes d'alcoolisme et
-                comment aider les personnes dans cette situation. Cette première expérience d'Unreal Engine m'a donné
-                les connaissances nécessaires
-                pour comprendre son fonctionnement. J'avais également le <span class="bold-span">rôle de lead
-                  developer
-                </span> et en charge la <span class="bold-span"> communication </span> entre l'équipe de
-                développeurs et l'équipe d'artistes.
+                Dans une <span class="bold-span">équipe de 8 développeurs et 8 artistes</span>, nous avons
+                développé un jeu sérieux sur l'alcoolisme. Cette première expérience avec Unreal m'a donné les
+                bases nécessaires ; j'avais aussi le <span class="bold-span">rôle de lead developer</span> en
+                charge de la <span class="bold-span">communication</span> entre les deux équipes.
               </div>
               <div class="gallery-text">
                 <h2>Rehab</h2>
@@ -1060,15 +886,13 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!--portfolio area ends-->
-
-  <!--services area starts-->
-
-  <div id="services" class="services-area section-padding skills-section">
+  <!-- Compétences -->
+  <section id="services" class="services-area section-padding skills-section">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -1083,94 +907,78 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="single-services wow fadeInDown text-center" data-wow-delay="0.2s">
             <div class="services-icon">
-              <i class="fa fa-puzzle-piece"></i>
+              <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
             </div>
             <div class="services-content">
               <h3>Programmation Orientée Objet</h3>
-              <p>
-                Je programme depuis plus de 8 ans, j'ai de <span class="bold"> solides bases </span>et je découvre tous
-                les jours de nouveaux éléments qui m'aident à<span class="bold"> améliorer mon code. </span>
-                Pour mener à bien mes <span class="bold"> projets, </span> j'utilise mes acquis et je recherche des
-                méthodes pour que mon travail soit <span class="bold"> optimal </span> et <span class="bold">
-                  modulaire.</span>
+              <p>Je programme depuis plus de 8 ans. J'ai de <span class="bold">solides bases</span> et
+                découvre chaque jour de nouveaux éléments pour <span class="bold">améliorer mon code</span>.
+                Pour mener à bien mes <span class="bold">projets</span>, j'utilise mes acquis et recherche
+                des méthodes pour que mon travail soit <span class="bold">optimal</span> et <span
+                  class="bold">modulaire</span>.</p>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="single-services wow fadeInDown text-center" data-wow-delay="0.4s">
             <div class="services-icon">
-              <i class="fa fa-gamepad"></i>
+              <i class="fa fa-gamepad" aria-hidden="true"></i>
             </div>
             <div class="services-content">
               <h3>Développement de jeux</h3>
-              <p>
-                Depuis mes études au Québec, je programme des jeux. Je maitrise autant <span class="bold"> Unity,
-                </span> qu'<span class="bold"> Unreal </span> et depuis peu je m'intéresse à <span
-                  class="bold">Godot</span>.
-                De nature curieuse, je me questionne sur la création des jeux, je recherche et découvre des algorithmes
-                pour améliorer mon travail.
-              </p>
+              <p>Depuis mes études au Québec, je programme des jeux. Je maîtrise <span
+                  class="bold">Unity</span>, <span class="bold">Unreal</span> et m'intéresse depuis peu à
+                <span class="bold">Godot</span>. De nature curieuse, je recherche et découvre des algorithmes
+                pour améliorer mon travail.</p>
             </div>
           </div>
         </div>
-
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="single-services wow fadeInDown text-center" data-wow-delay="0.6s">
-          <div class="services-icon">
-            <i class="fa fa-magic"></i>
-          </div>
-          <div class="services-content">
-            <h3>Shaders</h3>
-            <p>
-              Grâce aux cours <span class="bold">d'Infographie et d'Images par Ordinateur</span>, j'ai découvert ma
-              passion pour la programmation de shaders. Sur mes projets personnels j'aime tester de nouveaux effets
-              visuels.
-            </p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="single-services wow fadeInDown text-center" data-wow-delay="0.6s">
+            <div class="services-icon">
+              <i class="fa fa-magic" aria-hidden="true"></i>
+            </div>
+            <div class="services-content">
+              <h3>Shaders</h3>
+              <p>Grâce aux cours <span class="bold">d'Infographie et d'Images par Ordinateur</span>, j'ai
+                découvert ma passion pour la programmation de shaders. Sur mes projets personnels, j'aime
+                tester de nouveaux effets visuels.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="single-services wow fadeInDown text-center" data-wow-delay="0.8s">
-          <div class="services-icon">
-            <i class="fa fa-group"></i>
-          </div>
-          <div class="services-content">
-            <h3>Gestion d'équipe</h3>
-            <p>
-              Sur divers projets étudiants, j'ai décidé de prendre le rôle de <span class="bold"> lead </span> afin de
-              m'assurer de la qualité et de la réparition du travail.
-              Je suis attentif aux membres de mon équipe et mes connaissances
-              et conseils aident souvent celle-ci à résoudre les problèmes.
-            </p>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="single-services wow fadeInDown text-center" data-wow-delay="0.8s">
+            <div class="services-icon">
+              <i class="fa fa-group" aria-hidden="true"></i>
+            </div>
+            <div class="services-content">
+              <h3>Gestion d'équipe</h3>
+              <p>Sur divers projets étudiants, j'ai pris le rôle de <span class="bold">lead</span> afin de
+                veiller à la qualité et à la répartition du travail. Mes connaissances et mes conseils aident
+                régulièrement l'équipe à résoudre les problèmes.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="single-services wow fadeInDown text-center" data-wow-delay="1s">
-          <div class="services-icon">
-            <i class="fa fa-globe"></i>
-          </div>
-          <div class="services-content">
-            <h3>Développement Web</h3>
-            <p>Mes cours ainsi que mon stage de DUT m'ont procuré le savoir nécessaire pour la <span class="bold">
-                création de sites</span>.
-              J'ai notamment créé une application web dans une entreprise où j'ai travaillé (Maro Océans).</p>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="single-services wow fadeInDown text-center" data-wow-delay="1s">
+            <div class="services-icon">
+              <i class="fa fa-globe" aria-hidden="true"></i>
+            </div>
+            <div class="services-content">
+              <h3>Développement Web</h3>
+              <p>Mes cours et mon stage de DUT m'ont procuré les bases pour la <span class="bold">création de
+                  sites</span>. J'ai notamment créé une application web lors d'un stage en entreprise.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
+  </section>
 
-  <!--services area ends-->
-
-
-
-  <!--contact area starts-->
-
-  <div id="contact" class="contact-area section-padding">
+  <!-- Contact -->
+  <section id="contact" class="contact-area section-padding">
     <div class="container">
       <div class="row">
         <div class="section-header">
@@ -1189,13 +997,16 @@
                 <div class="top-contact-text wow fadeInDown" data-wow-delay="0.2s">
                   <div class="contact-icon">
                     <ul>
-                      <li><a
-                          href="https://www.google.com/maps/place/47%C2%B024'56.1%22N+1%C2%B049'32.2%22W/@47.415571,-1.8267013,18z/data=!3m1!4b1!4m14!1m7!3m6!1s0x4805880af953d5eb:0xbef0c85a3a0c27b8!2s3+La+Ridelais,+44130+Fay-de-Bretagne!3b1!8m2!3d47.4170882!4d-1.8205916!3m5!1s0x0:0x0!7e2!8m2!3d47.4155709!4d-1.8256073"
-                          target="_blank"><i class="fa fa-map-marker"></i></a></li>
+                      <li>
+                        <a href="https://www.google.com/maps/place/Nantes" target="_blank"
+                          rel="noopener noreferrer" aria-label="Voir sur Google Maps">
+                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </a>
+                      </li>
                     </ul>
                   </div>
-                  <h2>Adresse / Ville / Pays</h2>
-                  <p>14 Bd Benoni Goullin, Nantes, France</p>
+                  <h2>Ville / Pays</h2>
+                  <p>Nantes, France</p>
                 </div>
               </div>
 
@@ -1203,11 +1014,15 @@
                 <div class="top-contact-text wow fadeInDown" data-wow-delay="0.4s">
                   <div class="contact-icon">
                     <ul>
-                      <li><a href="tel:+33769344124" target="_blank"><i class="fa fa-phone"></i></a></li>
+                      <li>
+                        <a href="tel:+33769344124" aria-label="Appeler Samuel">
+                          <i class="fa fa-phone" aria-hidden="true"></i>
+                        </a>
+                      </li>
                     </ul>
                   </div>
-                  <h2>Numéro</h2>
-                  <p>+33 769344124</p>
+                  <h2>Téléphone</h2>
+                  <p><a href="tel:+33769344124">+33 7 69 34 41 24</a></p>
                 </div>
               </div>
 
@@ -1215,10 +1030,14 @@
                 <div class="top-contact-text wow fadeInDown" data-wow-delay="0.6s">
                   <div class="contact-icon">
                     <ul>
-                      <li><a href="mailto:samuel.busson@hotmail.fr"><i class="fa fa-envelope"></i></a></li>
+                      <li>
+                        <a href="mailto:samuel.busson@hotmail.fr" aria-label="Envoyer un e-mail">
+                          <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+                      </li>
                     </ul>
                   </div>
-                  <h2>Adresse mail</h2>
+                  <h2>E-mail</h2>
                   <p><a href="mailto:samuel.busson@hotmail.fr">samuel.busson@hotmail.fr</a></p>
                 </div>
               </div>
@@ -1228,42 +1047,19 @@
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
-
-
-  <!--Latest version JQuery-->
+  <!-- Scripts -->
   <script src="js/jquery-3.2.1.min.js"></script>
-
-  <!--Bootstrap js-->
   <script src="js/bootstrap.min.js"></script>
-
-  <!--Magnific popup js-->
   <script src="js/jquery.magnific-popup.js"></script>
-
-  <!--Owl Carousel js-->
   <script src="js/owl.carousel.js"></script>
-
-  <!--Mixitup js-->
   <script src="js/wow.min.js"></script>
-
-  <!--Owl Carousel js-->
-  <script src="js/owl.carousel.js"></script>
-
-  <!--Typed js-->
   <script src="js/typed.js"></script>
-
-  <!--particle js-->
   <script src="js/particles.js"></script>
   <script src="js/app.js"></script>
-
-  <!--Validator js-->
   <script src="js/validator.js"></script>
-
-  <!--Contact js-->
   <script src="js/contact.js"></script>
-
-  <!--Main js-->
   <script src="js/main.js"></script>
 </body>
 
